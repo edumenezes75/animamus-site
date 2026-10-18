@@ -3,13 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="description" content="Animamus, produtora de filmes em São Paulo. Criação, produção e finalização de filmes de marca, conteúdo e eventos.">
-<title>Animamus — Produção e pós-produção de filmes</title>
+<title>Animamus — Produtora de filmes em São Paulo</title>
 <link rel="canonical" href="https://animamus-lumen-class.vercel.app/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Animamus">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Animamus — Produção e pós-produção de filmes">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Animamus — Produtora de filmes em São Paulo">
 <meta property="og:description" content="Nunca foi tão fácil fazer uma imagem. Nem tão difícil fazer uma que alguém lembre.">
 <meta property="og:url" content="https://animamus-lumen-class.vercel.app/">
 <meta property="og:image" content="https://animamus-lumen-class.vercel.app/og.jpg">
@@ -493,7 +495,7 @@ const EN={"Fechar":"Close","Animamus — produção e pós-produção de filmes"
 "Com quem já filmamos":"Who we’ve shot for","Agências parceiras · Africa · AlmapBBDO · GUT · Hands · RED · Grupo Nose · Tridente · Sherpa 42 · Touch Branding · PalmEra":"Agency partners · Africa · AlmapBBDO · GUT · Hands · RED · Grupo Nose · Tridente · Sherpa 42 · Touch Branding · PalmEra",
 "Novo projeto?":"New project?","Let’s Talk":"Let’s Talk","Ver reel":"Watch reel","Produtor executivo":"Executive producer","Endereço":"Address","Escritório":"Office","Av. Macuco, 726, 1 andar, sala 1101":"Av. Macuco, 726, 1st floor, room 1101","Moema, São Paulo, SP, 04523-001":"Moema, São Paulo, SP, 04523-001"};
 const ATTR={'Animamus, início':'Animamus, home','Principal':'Main'};
-const META={pt:{t:'Animamus — Produção e pós-produção de filmes',d:'Animamus, produtora de filmes em São Paulo. Criação, produção e finalização de filmes de marca, conteúdo e eventos.'},en:{t:'Animamus — Film production and post-production',d:'Animamus, a film production company in São Paulo. Creation, production and post-production for brands, content and events.'}};
+const META={pt:{t:'Animamus — Produtora de filmes em São Paulo',d:'Animamus, produtora de filmes em São Paulo. Criação, produção e finalização de filmes de marca, conteúdo e eventos.'},en:{t:'Animamus — Film production company in São Paulo',d:'Animamus, a film production company in São Paulo. Creation, production and post-production for brands, content and events.'}};
 function setMeta(l){const m=META[l==='en'?'en':'pt'];document.title=m.t;document.querySelector('meta[name=description]').setAttribute('content',m.d);document.querySelector('meta[property="og:title"]').setAttribute('content',m.t);document.querySelector('meta[property="og:description"]')&&document.querySelector('meta[property="og:description"]').setAttribute('content',m.d)}
 const nodes=[];{const tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>{const p=n.parentElement;if(!p||p.closest('script,style,svg,#arch,#wordsH'))return NodeFilter.FILTER_REJECT;return EN[n.nodeValue.trim()]?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});
   while(tw.nextNode()){const n=tw.currentNode,raw=n.nodeValue,k=raw.trim(),pre=raw.match(/^\s*/)[0],post=raw.match(/\s*$/)[0];nodes.push({n,pt:raw,en:pre+EN[k]+post})}}
