@@ -115,13 +115,13 @@ main{display:block}
 
 /* 1 · hero */
 .s-hero .stage{background:var(--bg)}
-.hero-blob{position:absolute;inset:0;--z:1;--k:1;--o:1;opacity:var(--o);
+.hero-blob{position:absolute;inset:0;--z:1;--k:1;--o:1;opacity:var(--o);filter:saturate(1.35);
 background:
- radial-gradient(circle calc(40vmin * var(--k) * var(--z)) at 41% 43%,#7C5CFF 0%,rgba(124,92,255,.55) 42%,rgba(124,92,255,0) 78%),
- radial-gradient(circle calc(34vmin * var(--k) * var(--z)) at 57% 32%,#FF7A2E 0%,rgba(255,122,46,.5) 40%,rgba(255,122,46,0) 76%),
- radial-gradient(circle calc(40vmin * var(--k) * var(--z)) at 60% 58%,#FF3D9A 0%,rgba(255,61,154,.55) 42%,rgba(255,61,154,0) 78%),
- radial-gradient(circle calc(30vmin * var(--k) * var(--z)) at 33% 60%,#35C8FF 0%,rgba(53,200,255,.5) 40%,rgba(53,200,255,0) 76%),
- radial-gradient(circle calc(32vmin * var(--k) * var(--z)) at 50% 50%,rgba(255,61,154,.5) 0%,rgba(255,61,154,0) 72%)}
+ radial-gradient(circle calc(40vmin * var(--k) * var(--z)) at 41% 43%,#6A3BFF 0%,rgba(106,59,255,.95) 40%,rgba(106,59,255,0) 80%),
+ radial-gradient(circle calc(34vmin * var(--k) * var(--z)) at 57% 32%,#FF6A00 0%,rgba(255,106,0,.95) 40%,rgba(255,106,0,0) 80%),
+ radial-gradient(circle calc(40vmin * var(--k) * var(--z)) at 60% 58%,#FF2E8C 0%,rgba(255,46,140,.95) 42%,rgba(255,46,140,0) 80%),
+ radial-gradient(circle calc(30vmin * var(--k) * var(--z)) at 33% 60%,#16B2FF 0%,rgba(22,178,255,.95) 40%,rgba(22,178,255,0) 80%),
+ radial-gradient(circle calc(32vmin * var(--k) * var(--z)) at 50% 50%,rgba(255,46,140,.75) 0%,rgba(255,46,140,0) 74%)}
 .hero-mark{position:absolute;left:50%;top:50%;width:min(54vw,980px);transform:translate(-50%,-50%);color:var(--ink);z-index:2}
 /* fade do logo em fill-opacity (pintura), não em opacity: não cria camada de composição, que piscava preta */
 .mk-in svg path{fill-opacity:0;transition:fill-opacity 1.4s cubic-bezier(.4,0,.25,1)}
