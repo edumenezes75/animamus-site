@@ -497,6 +497,7 @@ $$('#langSeg [data-lang]').forEach(b=>b.addEventListener('click',()=>{if(b.datas
 /* ---------- boot ---------- */
 let start='pt';try{start=localStorage.getItem('animamus-lang')||'pt'}catch(e){start='pt'}
 if(start==='en')setLang('en');else{document.documentElement.lang='pt-BR'}
+if(MOTION)setupTx();
 kick();
 })();
 </script>
