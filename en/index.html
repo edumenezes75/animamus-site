@@ -192,6 +192,14 @@ html:not(.motion) .mk-in,.mk-in.ready{opacity:1}
 .s-archive h2{font-size:clamp(30px,3.6vw,52px);margin:0}
 .arch-head{display:flex;justify-content:space-between;align-items:end;gap:16px 28px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,40px)}
 .afilt{display:flex;gap:6px 20px;flex-wrap:wrap}
+.cgrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:#2A2A2E}
+.cc{background:var(--dark);padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;gap:10px;min-height:280px}
+.cc h3{font-family:var(--display);font-weight:760;font-size:clamp(20px,1.9vw,28px);line-height:1.1;margin:0;letter-spacing:-.01em;color:#F2F2F0}
+.cc-cl,.cc-mt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9A9AA2;margin:0}
+.cc-r{margin:0;font-size:15px;color:#D8D8DC}
+.cc-aw{margin:auto 0 0;font-size:13px;color:#F2F2F0;opacity:.9;line-height:1.4}
+.cc-go{margin-top:6px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#F2F2F0;text-decoration:none;border-bottom:1px solid currentColor;align-self:flex-start;padding-bottom:2px}
+.cc-go:hover{opacity:.7}
 .afilt button{font-size:15px;opacity:.5;padding:4px 0;border-bottom:1px solid transparent;transition:opacity .15s,border-color .15s}
 .afilt button:hover{opacity:.85}
 .afilt button[aria-pressed="true"]{opacity:1;border-color:currentColor}
@@ -346,6 +354,7 @@ html:not(.motion) .s-contact .stage{padding-block:80px}
   <section class="scene s-promise" style="--len:120" aria-label="Promessa"><div class="stage"><p>We make things worth feeling.</p><p>We believe in keeping things simple.</p><p>We turn challenges into possibilities.</p></div></section>
   <section class="scene s-prov" style="--len:110" aria-label="Provocação"><div class="stage"><h2 class="prov-line" id="provLine">Making an image has never been easier.<br>Making one that someone remembers, never harder.</h2></div></section>
   <div id="workScenes"></div>
+  <section class="s-archive pad" id="cases" aria-labelledby="casesH"><div class="arch-head"><h2 id="casesH">Video cases</h2></div><ul class="cgrid" id="cgrid"></ul></section>
   <section class="s-archive pad" id="filmes" aria-labelledby="archH"><div class="arch-head"><h2 id="archH">All films</h2><div class="afilt" id="afilt" role="group"></div></div><ul class="allg" id="arch"></ul></section>
 
   <section class="scene s-gen" id="ia" style="--len:160" aria-labelledby="genA">
@@ -620,6 +629,19 @@ const attrs=$$('[aria-label]').filter(e=>ATTR[e.getAttribute('aria-label')]).map
 function setLang(l){L=l;document.documentElement.lang=l==='en'?'en':'pt-BR';setMeta(l);nodes.forEach(o=>o.n.nodeValue=l==='en'?o.en:o.pt);attrs.forEach(a=>a.e.setAttribute('aria-label',l==='en'?ATTR[a.pt]:a.pt));
   $$('#langSeg [data-lang]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===l));buildWork();buildWords();scenes.forEach(s=>s.last=-1);kick();if(curP)fillProj();try{localStorage.setItem('animamus-lang',l)}catch(e){}}
 $$('#langSeg [data-lang]').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.lang!==L)location.href=b.dataset.lang==='en'?'/en/':'/'}));
+
+/* ---------- video cases (trabalhos do edumenezes.me) ---------- */
+const VC=[{"cl": "adidas LATAM / Club América", "tt": "adidas Inevitable", "ag": "Independente", "y": 2026, "r": {"pt": "Direção e edição", "en": "Direction and editing"}, "aw": null, "u": "adidas-inevitable"}, {"cl": "Budweiser / AB InBev", "tt": "One Second Ads", "ag": "Africa Creative DDB", "y": 2025, "r": {"pt": "Motion design", "en": "Motion design"}, "aw": {"pt": "Cannes Lions 2025: Grand Prix em Áudio e Rádio", "en": "Cannes Lions 2025: Grand Prix in Audio & Radio"}, "u": "one-second-ads"}, {"cl": "Budweiser / AB InBev", "tt": "Hermeto, Made of Music", "ag": "Africa Creative DDB", "y": 2018, "r": {"pt": "Motion design", "en": "Motion design"}, "aw": {"pt": "Cannes Lions 2018: Prata em Design", "en": "Cannes Lions 2018: Silver in Design"}, "u": "hermeto-made-of-music"}, {"cl": "Spaten / Ambev", "tt": "Spaten Fight Night", "ag": "GUT São Paulo", "y": 2025, "r": {"pt": "Motion design", "en": "Motion design"}, "aw": null, "u": "spaten-fight-night"}, {"cl": "espnW / ESPN + Penalty", "tt": "Inequality Balls", "ag": "Africa Creative DDB", "y": 2018, "r": {"pt": "Motion graphics", "en": "Motion graphics"}, "aw": {"pt": "Cannes Lions 2018: Prata em Design", "en": "Cannes Lions 2018: Silver in Design"}, "u": "inequality-balls"}, {"cl": "Vivo / Telefônica", "tt": "The Autism Journey", "ag": "Africa Creative DDB", "y": 2023, "r": {"pt": "Edição e motion design", "en": "Editing and motion design"}, "aw": {"pt": "Cannes Lions 2023: Bronze em Saúde e Bem-estar; D&AD 2024: Wood Pencil", "en": "Cannes Lions 2023: Bronze in Health & Wellness; D&AD 2024: Wood Pencil"}, "u": "autism-journey"}, {"cl": "Estadão Blue Studio", "tt": "Faith Decoded", "ag": "Africa Creative DDB", "y": 2026, "r": {"pt": "Motion design", "en": "Motion design"}, "aw": null, "u": "faith-decoded"}, {"cl": "Volt Sport / Silva 1932", "tt": "Air Silva", "ag": "Africa Creative DDB", "y": 2026, "r": {"pt": "Motion design", "en": "Motion design"}, "aw": null, "u": "air-silva"}, {"cl": "Havaianas / Alpargatas", "tt": "Havaianas Pinterest", "ag": "AlmapBBDO", "y": 2019, "r": {"pt": "Motion design", "en": "Motion design"}, "aw": null, "u": "havaianas-pinterest"}, {"cl": "MTV Brasil", "tt": "The Average Politician", "ag": "Africa Creative DDB", "y": 2018, "r": {"pt": "Motion design", "en": "Motion design"}, "aw": {"pt": "El Ojo 2018: Bronze", "en": "El Ojo 2018: Bronze"}, "u": "mr-congressman"}, {"cl": "Universidade Zumbi dos Palmares", "tt": "The Real Machado de Assis", "ag": "Grey Brasil", "y": 2019, "r": {"pt": "Motion graphics", "en": "Motion graphics"}, "aw": {"pt": "Cannes Lions 2019: Bronze em Brand Experience", "en": "Cannes Lions 2019: Bronze in Brand Experience"}, "u": "real-machado"}, {"cl": "Vale", "tt": "Vale Dots", "ag": "Africa Creative DDB", "y": 2019, "r": {"pt": "Direção, edição e motion", "en": "Direction, editing and motion"}, "aw": null, "u": "vale-dots"}, {"cl": "Itaú", "tt": "Letters From Simone", "ag": "ATENAS.ag", "y": 2024, "r": {"pt": "Motion design", "en": "Motion design"}, "aw": {"pt": "BEA World Festival 2025: Bronze", "en": "BEA World Festival 2025: Bronze"}, "u": "letters-from-simone"}, {"cl": "AB InBev / Ambev", "tt": "SOS Bees", "ag": "Africa Creative DDB", "y": 2025, "r": {"pt": "Motion design", "en": "Motion design"}, "aw": {"pt": "Cannes Lions 2025: Bronze em ODS", "en": "Cannes Lions 2025: Bronze in SDGs"}, "u": "sos-bees"}, {"cl": "Vivo / Telefônica", "tt": "Amazon Desert Rally", "ag": "Africa Creative DDB", "y": 2024, "r": {"pt": "Motion design", "en": "Motion design"}, "aw": {"pt": "Effie Latam 2024: Ouro em Reputação Corporativa", "en": "Effie Latam 2024: Gold in Corporate Reputation"}, "u": "amazon-rally"}, {"cl": "Vivo / Wonder Women Tech", "tt": "#MyGameMyName", "ag": "Africa Creative DDB", "y": 2018, "r": {"pt": "Motion design", "en": "Motion design"}, "aw": {"pt": "Cannes Lions 2018: Prata em Lion for Change", "en": "Cannes Lions 2018: Silver in Lion for Change"}, "u": "my-game-my-name"}];
+function buildCases(){const ul=$('#cgrid');if(!ul)return;ul.innerHTML='';VC.forEach(c=>{const li=document.createElement('li');li.className='cc';
+  const k=document.createElement('span');k.className='mono cc-cl';k.textContent=c.cl;
+  const h=document.createElement('h3');h.textContent=c.tt;
+  const m=document.createElement('p');m.className='mono cc-mt';m.textContent=c.ag+' · '+c.y;
+  const r=document.createElement('p');r.className='cc-r';r.textContent=t(c.r);
+  li.append(k,h,m,r);
+  if(c.aw){const a=document.createElement('p');a.className='cc-aw';a.textContent=t(c.aw);li.append(a)}
+  const l=document.createElement('a');l.className='cc-go mono';l.href='https://edumenezes.me/work/'+c.u;l.target='_blank';l.rel='noopener';l.textContent=(L==='en'?'View case':'Ver case')+' ↗';li.append(l);
+  ul.append(li)})}
+buildCases();
 
 /* ---------- boot ---------- */
 $$('#langSeg [data-lang]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===L));
