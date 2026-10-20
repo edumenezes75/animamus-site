@@ -144,7 +144,7 @@ html.ready .bar .logo svg image.bl,html:not(.motion) .bar .logo svg image.bl{opa
 body.on-dark .bar .logo svg image.bl{opacity:0;transition:opacity .4s var(--e-in)}
 html.ready body.on-dark .bar .logo svg image.bd,html:not(.motion) body.on-dark .bar .logo svg image.bd{opacity:1;transition:opacity .4s var(--e-in)}
 html:not(.motion) .mk-in,.mk-in.ready{opacity:1}
-.hero-step{position:absolute;left:0;right:0;top:50%;margin:0;transform:translateY(-50%);text-align:center;z-index:4;pointer-events:none;opacity:0;color:#F2F0F5;font-family:var(--display);font-weight:760;font-size:clamp(28px,4.4vw,72px);line-height:1.02;letter-spacing:-.02em;padding:0 var(--gutter)}
+.hero-step{position:absolute;left:0;right:0;top:50%;margin:0;transform:translateY(-50%);text-align:center;z-index:4;pointer-events:none;opacity:0;color:#F2F0F5;font-family:var(--display);font-weight:760;font-size:clamp(30px,5vw,84px);line-height:1.02;letter-spacing:-.02em;padding:0 var(--gutter)}
 .hero-mark svg{display:block;width:100%;height:auto;aspect-ratio:606/92;shape-rendering:geometricPrecision}
 .bar .logo svg{aspect-ratio:606/92}
 .hero-line{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:3;text-align:center;color:#fff;font-family:var(--display);font-weight:760;font-size:clamp(30px,5.2vw,92px);line-height:.98;letter-spacing:-.02em;font-variation-settings:"wdth" 84;opacity:0;padding-inline:var(--gutter)}
@@ -495,7 +495,7 @@ if(MOTION)scene($('.s-hero'),p=>{
   const bl=$('#blob');bl.style.setProperty('--z',(1+3.6*heroZoom).toFixed(3));
   const a=clamp01((p-.04)/.32);const mk=$('#heroMark');mk.style.opacity=(1-a).toFixed(3);mk.style.transform='translate(-50%,-50%) scale('+(1+.6*ease(a)).toFixed(4)+')';
   $('#heroFoot').style.opacity=(1-clamp01((p-.02)/.12)).toFixed(3);
-  const so=ease(clamp01((p-.55)/.2));const st=$('#heroStep');st.style.opacity=so.toFixed(3);st.style.transform='translateY(-50%) translateY('+((1-so)*28).toFixed(1)+'px)';
+  const so=ease(clamp01((heroZoom-.5)/.3));const st=$('#heroStep');st.style.opacity=so.toFixed(3);st.style.transform='translateY(-50%) translateY('+((1-so)*28).toFixed(1)+'px)';
   });
 
 /* ---------- Provocação: line settles in ---------- */
