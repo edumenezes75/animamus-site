@@ -196,6 +196,7 @@ html:not(.motion) .mk-in,.mk-in.ready{opacity:1}
 .cgrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:clamp(56px,6vw,96px);align-items:start}
 .cc{grid-column:span 4;min-width:0;display:flex;flex-direction:column;gap:0;color:#F2F2F0}
 .cc:first-child{grid-column:span 8}
+.cc:nth-child(n+15){grid-column:span 6}
 .cc-media,.cc-frame{display:block;width:100%;aspect-ratio:16/9;margin:0 0 22px;border:0;padding:0;background:linear-gradient(160deg,#1f1f27,#17171d) center/cover no-repeat;border-radius:2px}
 .cc-media{position:relative;cursor:pointer}
 .cc-media::after{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:0;height:0;border-left:14px solid #F2F2F0;border-top:9px solid transparent;border-bottom:9px solid transparent;opacity:.85;transition:opacity .3s}
