@@ -504,14 +504,14 @@ if(MOTION)scene($('.s-prov'),p=>{const o=clamp01((p-.12)/.38);const l=$('#provLi
 const workBox=$('#workScenes'),arch=$('#arch');const workScenes=[];
 function tileHTML(w,cls){return '<div class="tile '+cls+(w.img?' has-img" style="background-image:url('+w.img+')"':'"')+'><span class="tg mono">'+t(KIND[w.k])+'</span><span class="nm"></span></div>'}
 function infoHTML(w){return '<div class="info"><div><span class="kind mono"></span><h3 style="font-size:clamp(28px,3.4vw,52px);line-height:.95"></h3></div><p></p><button class="open" type="button"></button></div>'}
-function fillInfo(el,w){el.querySelector('.kind').textContent=t(KIND[w.k])+(w.ag!=='—'?' · '+w.ag:'');el.querySelector('h3').textContent=t(w.tt);el.querySelector('p').textContent=t(w.d);
+function fillInfo(el,w){el.querySelector('.kind').textContent=(w.ag!=='—'?w.ag:'');el.querySelector('h3').textContent=t(w.tt);el.querySelector('p').textContent=t(w.d);
   const ob=el.querySelector('.open');ob.textContent=L==='en'?'See the project':'Ver projeto';ob.onclick=()=>openProj(w.id)}
 let aKind='all';
 function coverHTML(w){return '<span class="cv">'+(w.img?'<span class="im" style="background-image:url('+w.img+')"></span>':'<span class="nm"></span>')+'</span>'}
 function buildArchive(){arch.innerHTML='';const io=MOTION&&'IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'}):null;
   W.forEach((w,i)=>{const li=document.createElement('li');li.dataset.k=w.k;li.style.setProperty('--d',(i%4)*70+'ms');
     li.innerHTML='<button type="button">'+coverHTML(w)+'<span class="cl"></span><span class="pj"></span><span class="mono mt"></span></button>';
-    li.querySelector('.cl').textContent=t(w.cl);li.querySelector('.pj').textContent=t(w.tt);li.querySelector('.mt').textContent=t(KIND[w.k])+(w.ag!=='—'?' · '+w.ag:'');
+    li.querySelector('.cl').textContent=t(w.cl);li.querySelector('.pj').textContent=t(w.tt);li.querySelector('.mt').textContent=(w.ag!=='—'?w.ag:'');
     const nm=li.querySelector('.nm');if(nm)nm.textContent=t(w.cl);li.querySelector('button').onclick=()=>openProj(w.id);li.hidden=aKind!=='all'&&w.k!==aKind;arch.appendChild(li);if(io)io.observe(li);else li.classList.add('in')});
   const f=$('#afilt');f.innerHTML='';[['all',{pt:'Todos',en:'All'}],...Object.entries(KIND)].forEach(([k,lab])=>{const n=k==='all'?W.length:W.filter(w=>w.k===k).length;if(!n)return;
     const bt=document.createElement('button');bt.type='button';bt.setAttribute('aria-pressed',aKind===k);bt.innerHTML='<span></span>';bt.firstChild.textContent=t(lab);
@@ -553,7 +553,7 @@ function buildWork(){workBox.innerHTML='';scenes.splice(0,scenes.length,...scene
     sec.innerHTML='<div class="stage"><div class="row">'+tileHTML(sides[0],'side')+tileHTML(sides[1],'side')+tileHTML(w,'main')+tileHTML(sides[2],'side')+tileHTML(sides[3],'side')+'</div>'+
       '<div class="info"><div><span class="kind mono"></span><h3 style="font-size:clamp(28px,3.4vw,52px);line-height:.95"></h3></div><p></p><button class="open" type="button"></button></div></div>';
     const tiles=[...sec.querySelectorAll('.tile')];[sides[0],sides[1],w,sides[2],sides[3]].forEach((x,i)=>tiles[i].querySelector('.nm').textContent=t(x.cl));
-    sec.querySelector('.kind').textContent=t(KIND[w.k])+(w.ag!=='—'?' · '+w.ag:'');sec.querySelector('h3').textContent=t(w.tt);sec.querySelector('.info p').textContent=t(w.d);
+    sec.querySelector('.kind').textContent=(w.ag!=='—'?w.ag:'');sec.querySelector('h3').textContent=t(w.tt);sec.querySelector('.info p').textContent=t(w.d);
     const ob=sec.querySelector('.open');ob.textContent=L==='en'?'See the project':'Ver projeto';ob.onclick=()=>openProj(w.id);tiles[2].addEventListener('click',()=>openProj(w.id));tiles[2].style.cursor='pointer';
     workBox.appendChild(sec);
     if(MOTION){const row=sec.querySelector('.row');row.classList.add('abs');const main=tiles[2],info=sec.querySelector('.info');const tg=main.querySelector('.tg');const s=scene(sec,p=>{const side=tiles[0];const tw=side.offsetWidth,th=side.offsetHeight;const e=ease(clamp01((p-.08)/.55));
