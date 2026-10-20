@@ -514,7 +514,7 @@ function buildArchive(){arch.innerHTML='';const io=MOTION&&'IntersectionObserver
     li.querySelector('.cl').textContent=t(w.cl);li.querySelector('.pj').textContent=t(w.tt);li.querySelector('.mt').textContent=t(KIND[w.k])+(w.ag!=='—'?' · '+w.ag:'');
     const nm=li.querySelector('.nm');if(nm)nm.textContent=t(w.cl);li.querySelector('button').onclick=()=>openProj(w.id);li.hidden=aKind!=='all'&&w.k!==aKind;arch.appendChild(li);if(io)io.observe(li);else li.classList.add('in')});
   const f=$('#afilt');f.innerHTML='';[['all',{pt:'Todos',en:'All'}],...Object.entries(KIND)].forEach(([k,lab])=>{const n=k==='all'?W.length:W.filter(w=>w.k===k).length;if(!n)return;
-    const bt=document.createElement('button');bt.type='button';bt.setAttribute('aria-pressed',aKind===k);bt.innerHTML='<span></span><sup></sup>';bt.firstChild.textContent=t(lab);bt.lastChild.textContent=n;
+    const bt=document.createElement('button');bt.type='button';bt.setAttribute('aria-pressed',aKind===k);bt.innerHTML='<span></span>';bt.firstChild.textContent=t(lab);
     bt.onclick=()=>{aKind=k;$$('#afilt button').forEach(x=>x.setAttribute('aria-pressed',x===bt));$$('#arch li').forEach(li=>{const show=k==='all'||li.dataset.k===k;li.hidden=!show;if(show){li.classList.remove('in');void li.offsetWidth;li.classList.add('in')}})};f.appendChild(bt)})}
 /* one scene: a row of films; the first grows to fill the screen, then the others slide in, one per scroll step */
 function buildRail(){const feats=FEAT.map(id=>W.find(x=>x.id===id)).filter(Boolean);const N=feats.length;
