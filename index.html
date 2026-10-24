@@ -272,6 +272,12 @@ html.motion .allg li.in{opacity:1;transform:none}
 /* 4 · words that light up */
 .s-words .stage{background:var(--bg);display:grid;align-content:center;padding:calc(var(--bar) + 20px) var(--gutter) 30px}
 .words{text-wrap:balance;font-family:var(--display);font-weight:650;font-size:var(--fs-h1);line-height:1.06;letter-spacing:-.015em;font-variation-settings:"wdth" 88;max-width:22ch;margin:0}
+.words{max-width:none}
+.words .wseg{display:block}
+.words .wseg.l{font-size:var(--fs-h1);font-weight:760;line-height:1.04;letter-spacing:-.02em;font-variation-settings:"wdth" 84;margin-bottom:.6em;max-width:22em}
+.words .wseg.b{font-size:var(--fs-h2);font-weight:500;line-height:1.3;letter-spacing:-.01em;margin-bottom:.9em;max-width:26em}
+.words .wseg.k{font-size:var(--fs-h2);font-weight:650;line-height:1.1;letter-spacing:-.015em}
+
 .words span{opacity:.14;transition:opacity .25s linear}
 .words span.on{opacity:1}
 .words-foot{margin-top:28px;color:var(--ink-2);font-size:var(--fs-small);max-width:60ch}
@@ -599,8 +605,8 @@ function applyGen(p){const e=ease(clamp01((p-.2)/.45));const S=g9.offsetWidth/(c
 if(MOTION)scene($('.s-gen'),applyGen);else applyGen(1);
 
 /* ---------- 4 · words light up one by one ---------- */
-const WORDS={pt:'22 anos de experiência nos ensinaram uma coisa simples: trabalho bom não precisa ser complicado. Trazemos experiência, curiosidade e as pessoas certas para cada desafio. Escutamos. Pensamos. Fazemos acontecer. Menos atrito. Mais criação. É assim que trabalhamos.',en:'22 years of experience have shaped a simple belief: good work doesn’t have to be complicated. We bring experience, curiosity and the right people to every challenge. We listen. We think. We make it happen. Less friction. More creation. That’s how we work.'};
-let wspans=[];function buildWords(){const h=$('#wordsH');h.innerHTML='';wspans=t(WORDS).split(' ').map((w,i,arr)=>{const s=document.createElement('span');s.textContent=w;h.appendChild(s);if(i<arr.length-1)h.appendChild(document.createTextNode(' '));return s});h.setAttribute('aria-label',t(WORDS))}
+const WORDS={pt:[{c:"l",t:"22 anos de experiência nos ensinaram uma coisa simples: trabalho bom não precisa ser complicado."},{c:"b",t:"Trazemos experiência, curiosidade e as pessoas certas para cada desafio."},{c:"k",t:"Escutamos."},{c:"k",t:"Pensamos."},{c:"k",t:"Fazemos acontecer."},{c:"b",t:"Menos atrito. Mais criação. É assim que trabalhamos."}],en:[{c:"l",t:"22 years of experience have shaped a simple belief: good work doesn’t have to be complicated."},{c:"b",t:"We bring experience, curiosity and the right people to every challenge."},{c:"k",t:"We listen."},{c:"k",t:"We think."},{c:"k",t:"We make it happen."},{c:"b",t:"Less friction. More creation. That’s how we work."}]};
+let wspans=[];function buildWords(){const h=$('#wordsH');h.innerHTML='';wspans=[];const segs=t(WORDS);segs.forEach(sg=>{const d=document.createElement('span');d.className='wseg '+sg.c;sg.t.split(' ').forEach((w,i,arr)=>{const s=document.createElement('span');s.textContent=w;d.appendChild(s);wspans.push(s);if(i<arr.length-1)d.appendChild(document.createTextNode(' '))});h.appendChild(d)});h.setAttribute('aria-label',segs.map(x=>x.t).join(' '))}
 function applyWords(p){const n=wspans.length;const lit=Math.round(clamp01((p-.08)/.72)*n);wspans.forEach((s,i)=>s.classList.toggle('on',i<lit))}
 buildWords();if(MOTION)scene($('.s-words'),applyWords);else applyWords(1);
 
