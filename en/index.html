@@ -441,7 +441,7 @@ const W=[
  {id:'bourbon',cl:'Bourbon',tt:{pt:'Bourbon Resort',en:'Bourbon Resort'},ag:'—',k:'filme',c:['#0b5d3b','#f2c14e','#ffffff'],b:'#06140e',d:{pt:'Filme do Bourbon Resort.',en:'A film for Bourbon Resort.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Edição',en:'Editing'},'Pedro'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]},
  {id:'accenture-renew',cl:'Accenture',tt:{pt:'Renew Resources',en:'Renew Resources'},ag:'—',k:'animacao',c:['#a100ff','#35C8FF','#ffffff'],b:'#0d0616',d:{pt:'Motion design para a Accenture.',en:'Motion design for Accenture.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]}
 ];
-const FB="https://animamus.art.br/filmes/";
+const FB="/filmes/";
 const LOC={"youtube": "youtube-brandcast", "alvarez": "alvarez-marsal", "wellhub": "wellhub", "accenture": "accenture-telefonica", "googlebf": "google-black-friday-2024", "chilli": "chilli-beans", "bourbon": "bourbon-resort", "accenture-renew": "accenture-renew"};
 W.forEach(w=>{const s=LOC[w.id];if(s){w.mp4=FB+s+'.mp4';w.img=FB+'posters/'+s+'.jpg';delete w.v}});
 W.sort((a,b)=>(!!b.img)-(!!a.img));W.forEach((w,i)=>w.i=i);
