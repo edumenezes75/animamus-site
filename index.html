@@ -477,7 +477,7 @@ const LOC={"youtube": "youtube-brandcast", "alvarez": "alvarez-marsal", "wellhub
 W.forEach(w=>{const s=LOC[w.id];if(s){w.mp4=FB+s+'.mp4';w.img=FB+'posters/'+s+'.jpg';delete w.v}});
 W.sort((a,b)=>(!!b.img)-(!!a.img));W.forEach((w,i)=>w.i=i);
 const rb=$('#reelBtn');if(rb)rb.onclick=()=>{const o=document.createElement('div');o.setAttribute('role','dialog');o.setAttribute('aria-modal','true');o.style.cssText='position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:16px';const vd=document.createElement('video');vd.src=FB+'reel-2026.mp4';vd.controls=true;vd.autoplay=true;vd.playsInline=true;vd.poster=FB+'posters/reel-2026.jpg';vd.style.cssText='max-width:100%;max-height:100%;width:1280px';o.appendChild(vd);const kd=e=>{if(e.key==='Escape')close()};const close=()=>{vd.pause();o.remove();document.removeEventListener('keydown',kd)};o.onclick=e=>{if(e.target===o)close()};document.addEventListener('keydown',kd);document.body.appendChild(o)};
-const FEAT=['youtube','wellhub','alvarez','googlebf'];
+const FEAT=['youtube','wellhub','alvarez','googlebf','chilli'];
 
 /* ---------- scene engine: wheel → progress, damped, never hijacks ---------- */
 const scenes=[];let raf=0,lastT=0;
