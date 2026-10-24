@@ -130,14 +130,8 @@ main{display:block}
 
 /* 1 · hero */
 .s-hero .stage{background:var(--bg)}
-.hero-blob{position:absolute;inset:-4%;--z:1;--k:1;--o:1;opacity:var(--o);
-background:
- radial-gradient(circle calc(40vmin * var(--k) * var(--z)) at 41% 43%,#7C5CFF 0%,rgba(124,92,255,.55) 42%,rgba(124,92,255,0) 78%),
- radial-gradient(circle calc(34vmin * var(--k) * var(--z)) at 57% 32%,#FF7A2E 0%,rgba(255,122,46,.5) 40%,rgba(255,122,46,0) 76%),
- radial-gradient(circle calc(40vmin * var(--k) * var(--z)) at 60% 58%,#FF3D9A 0%,rgba(255,61,154,.55) 42%,rgba(255,61,154,0) 78%),
- radial-gradient(circle calc(30vmin * var(--k) * var(--z)) at 33% 60%,#35C8FF 0%,rgba(53,200,255,.5) 40%,rgba(53,200,255,0) 76%),
- radial-gradient(circle calc(32vmin * var(--k) * var(--z)) at 50% 50%,rgba(255,61,154,.5) 0%,rgba(255,61,154,0) 72%)}
-.hero-mark{position:absolute;left:50%;top:50%;width:min(54vw,980px);transform:translate(-50%,-50%);color:var(--ink);z-index:2}
+.hero-blob{position:absolute;inset:-4%;--z:1;--k:1;--o:1;opacity:var(--o);background:linear-gradient(160deg,#111113 0%,#1E1A3F 55%,#334694 100%)}
+.hero-mark{position:absolute;left:50%;top:50%;width:min(54vw,980px);transform:translate(-50%,-50%);color:#F2F2F0;z-index:2}
 /* fade do logo em fill-opacity (pintura), não em opacity: não cria camada de composição, que piscava preta */
 .mk-in svg path{fill-opacity:0;transition:fill-opacity 1.4s cubic-bezier(.4,0,.25,1)}
 .mk-in.ready svg path,html:not(.motion) .mk-in svg path{fill-opacity:1}
@@ -503,7 +497,7 @@ function txRun(dt){let moving=false;barTx=null;
   return moving}
 function veil(){const h=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--bar'))||61;let on=false;$$('.s-archive,.svc,.offices,.foot').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<h-2&&r.bottom>0)on=true});const hero=$('.s-hero');if(hero&&hero.getBoundingClientRect().bottom<=2)on=true;const colored=$$('.s-prov,.s-promise,.s-gen,.s-clients,.s-hero').some(el=>{const r=el.getBoundingClientRect();return r.top<h&&r.bottom>0});document.body.classList.toggle('veil',on&&!colored)}
 function darkBar(){veil();const y=30;let dark=false;if(barTx!==null){document.body.classList.toggle('on-dark',barTx);return}$$('.s-work,.s-archive,.s-promise,.s-prov,.s-gen,.s-clients,.offices,.foot').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<=y&&r.bottom>y)dark=true});
-  const hd=$('#heroDim');if(hd&&+hd.style.opacity>.5){const r=$('.s-hero').getBoundingClientRect();if(r.bottom>y)dark=true}document.body.classList.toggle('on-dark',dark)}
+  const hd=$('#heroDim');{const r=$('.s-hero').getBoundingClientRect();if(r.bottom>y)dark=true}document.body.classList.toggle('on-dark',dark)}
 
 /* ---------- 1 · hero: the blob swallows the screen ---------- */
 let heroZoom=0;
