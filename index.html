@@ -212,11 +212,12 @@ html:not(.motion) .mk-in,.mk-in.ready{opacity:1}
 .cc-go{margin-top:var(--sp-2);padding:10px 0;font-size:var(--fs-micro);letter-spacing:.1em;text-transform:uppercase;color:#F2F2F0;text-decoration:none;border-bottom:1.5px solid currentColor;align-self:flex-start;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center}
 .cc-go:hover{opacity:.7}
 
-.cases-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--sp-3);align-items:stretch;margin-bottom:clamp(40px,6vw,96px)}
-.cases-top .cases-img{display:block;width:100%;aspect-ratio:3/4;background:#1f1f27 center/cover no-repeat;border-radius:2px;margin:0}
-.cases-text{display:flex;flex-direction:column;justify-content:center;color:#F2F2F0;font-family:var(--display);font-weight:650;font-size:var(--fs-h2);line-height:1.15;letter-spacing:-.015em}
-.cases-text p{margin:0 0 .6em}
-.cases-text p.cases-sub{font-family:var(--body);font-weight:400;font-size:var(--fs-small);line-height:1.6;color:#D8D8DC}
+.cases-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--sp-3);align-items:center;margin-bottom:clamp(40px,6vw,96px)}
+.cases-top .cases-img{margin:0;width:100%;aspect-ratio:4/5;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:2px}
+.cases-top .cases-img img{width:100%;height:100%;object-fit:contain;display:block}
+.cases-text{color:#F2F2F0}
+.cases-text .cases-lead{font-family:var(--display);font-weight:650;font-size:var(--fs-h2);line-height:1.1;letter-spacing:-.015em;margin:0 0 .6em}
+.cases-text p{font-family:var(--body);font-weight:400;font-size:var(--fs-body);line-height:1.6;margin:0 0 1em;color:#D8D8DC}
 @media (max-width:700px){.cases-top{grid-template-columns:1fr}}
 @media (max-width:1100px){.cgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.cgrid{grid-template-columns:1fr}}
@@ -375,7 +376,7 @@ html:not(.motion) .s-contact .stage{padding-block:80px}
   <section class="scene s-prov" style="--len:110" aria-label="Provocação"><div class="stage"><h2 class="prov-line" id="provLine">Nunca foi tão fácil fazer uma imagem.<br>Nem tão difícil fazer uma que alguém lembre.</h2></div></section>
   <div id="workScenes"></div>
   <section class="s-archive pad" id="filmes" aria-labelledby="archH"><div class="arch-head"><h2 id="archH">Todos os filmes</h2><div class="afilt" id="afilt" role="group"></div></div><ul class="allg" id="arch"></ul></section>
-  <section class="s-archive pad" id="cases" aria-labelledby="casesH"><div class="cases-top"><figure class="cases-img" role="img" aria-label="Video cases" style="margin:0;background-image:url(cases/sos-bees.jpg)"></figure><div class="cases-text"><p>Nem toda ação nasce memorável. Algumas se tornam.</p><p>Existe uma diferença entre registrar uma história e fazer dela um grande case.</p><p class="cases-sub">A gente conhece essa diferença. São mais de 20 anos de experiência, muitos filmes, prêmios, acertos e erros que viraram método.</p><p class="cases-sub">Fabio Aniya e Eduardo Menezes, nosso parceiro em direção criativa e motion, unem repertório, visão e uma certa obsessão por contar boas histórias.</p><p class="cases-sub">Não basta ter um case. Tem que saber contar.</p></div></div><div class="arch-head"><h2 id="casesH">Video cases</h2></div><ul class="cgrid" id="cgrid"></ul></section>
+  <section class="s-archive pad" id="cases" aria-labelledby="casesH"><div class="cases-top"><figure class="cases-img"><img src="cases/sos-bees.jpg" alt="SOS Bees — AB InBev" loading="lazy"></figure><div class="cases-text"><p class="cases-lead">Nem toda ação nasce memorável. Algumas se tornam.</p><p>Existe uma diferença entre registrar uma história e fazer dela um grande case.</p><p>A gente conhece essa diferença. São mais de 20 anos de experiência, muitos filmes, prêmios, acertos e erros que viraram método.</p><p>Fabio Aniya e Eduardo Menezes, nosso parceiro em direção criativa e motion, unem repertório, visão e uma certa obsessão por contar boas histórias.</p><p>Não basta ter um case. Tem que saber contar.</p></div></div><div class="arch-head"><h2 id="casesH">Video cases</h2></div><ul class="cgrid" id="cgrid"></ul></section>
 
   <section class="scene s-gen" id="ia" style="--len:160" aria-labelledby="genA">
     <div class="stage">
