@@ -274,9 +274,13 @@ html.motion .allg li.in{opacity:1;transform:none}
 .words{text-wrap:balance;font-family:var(--display);font-weight:650;font-size:var(--fs-h1);line-height:1.06;letter-spacing:-.015em;font-variation-settings:"wdth" 88;max-width:22ch;margin:0}
 .words{max-width:none}
 .words .wseg{display:block}
-.words .wseg.l{font-size:var(--fs-h1);font-weight:760;line-height:1.04;letter-spacing:-.02em;font-variation-settings:"wdth" 84;margin-bottom:.6em;max-width:22em}
-.words .wseg.b{font-size:var(--fs-h2);font-weight:500;line-height:1.3;letter-spacing:-.01em;margin-bottom:.9em;max-width:26em}
-.words .wseg.k{font-size:var(--fs-h2);font-weight:650;line-height:1.1;letter-spacing:-.015em}
+.words .wseg.l{font-size:var(--fs-h1);font-weight:760;line-height:1.04;letter-spacing:-.02em;font-variation-settings:"wdth" 84;margin-bottom:.6em;max-width:24em}
+.words .wseg.b{font-size:var(--fs-h2);font-weight:500;line-height:1.3;letter-spacing:-.01em;margin-bottom:.9em;max-width:24em}
+.words .wseg.b:last-child{margin-top:1.6em;margin-bottom:0}
+.words .wseg.k{font-size:var(--fs-h2);font-weight:650;line-height:1.15;letter-spacing:-.015em;margin-bottom:.12em}
+.words .wseg.k:nth-child(5){color:#CF5790}
+.s-words .stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:var(--sp-3);align-items:start}
+@media (max-width:700px){.s-words .stage{grid-template-columns:1fr}}
 
 .words span{opacity:1}
 .words span.on{opacity:1}
