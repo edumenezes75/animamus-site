@@ -278,7 +278,7 @@ html.motion .allg li.in{opacity:1;transform:none}
 .words .wseg.b{font-size:var(--fs-h2);font-weight:500;line-height:1.3;letter-spacing:-.01em;margin-bottom:.9em;max-width:26em}
 .words .wseg.k{font-size:var(--fs-h2);font-weight:650;line-height:1.1;letter-spacing:-.015em}
 
-.words span{opacity:.14;transition:opacity .25s linear}
+.words span{opacity:1}
 .words span.on{opacity:1}
 .words-foot{margin-top:28px;color:var(--ink-2);font-size:var(--fs-small);max-width:60ch}
 .svc{list-style:none;margin:0;padding:0 var(--gutter) clamp(48px,7vw,100px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
@@ -404,7 +404,7 @@ html:not(.motion) .s-contact .stage{padding-block:80px}
     </div>
   </section>
 
-  <section class="scene s-words" id="estudio" style="--len:150" aria-labelledby="wordsH">
+  <section class="s-words" id="estudio" aria-labelledby="wordsH">
     <div class="stage">
       <span class="mono" style="color:var(--ink-2);margin-bottom:22px">Studio</span>
       <p class="words" id="wordsH" data-words>22 years of experience have shaped a simple belief: good work doesn’t have to be complicated. We bring experience, curiosity and the right people to every challenge. We listen. We think. We make it happen. Less friction. More creation. That’s how we work.</p>
@@ -608,7 +608,7 @@ if(MOTION)scene($('.s-gen'),applyGen);else applyGen(1);
 const WORDS={pt:[{c:"l",t:"22 anos de experiência nos ensinaram uma coisa simples: trabalho bom não precisa ser complicado."},{c:"b",t:"Trazemos experiência, curiosidade e as pessoas certas para cada desafio."},{c:"k",t:"Escutamos."},{c:"k",t:"Pensamos."},{c:"k",t:"Fazemos acontecer."},{c:"b",t:"Menos atrito. Mais criação. É assim que trabalhamos."}],en:[{c:"l",t:"22 years of experience have shaped a simple belief: good work doesn’t have to be complicated."},{c:"b",t:"We bring experience, curiosity and the right people to every challenge."},{c:"k",t:"We listen."},{c:"k",t:"We think."},{c:"k",t:"We make it happen."},{c:"b",t:"Less friction. More creation. That’s how we work."}]};
 let wspans=[];function buildWords(){const h=$('#wordsH');h.innerHTML='';wspans=[];const segs=t(WORDS);segs.forEach(sg=>{const d=document.createElement('span');d.className='wseg '+sg.c;sg.t.split(' ').forEach((w,i,arr)=>{const s=document.createElement('span');s.textContent=w;d.appendChild(s);wspans.push(s);if(i<arr.length-1)d.appendChild(document.createTextNode(' '))});h.appendChild(d)});h.setAttribute('aria-label',segs.map(x=>x.t).join(' '))}
 function applyWords(p){const n=wspans.length;const lit=Math.round(clamp01((p-.08)/.72)*n);wspans.forEach((s,i)=>s.classList.toggle('on',i<lit))}
-buildWords();if(MOTION)scene($('.s-words'),applyWords);else applyWords(1);
+buildWords();applyWords(1);
 
 /* ---------- 5 · clients slide sideways ---------- */
 const CL=['Google','YouTube','Wellhub','Heineken','Budweiser','Spaten','Havaianas','Colgate','Itaú','Accenture','Ray-Ban','Electrolux','Red Bull','Monster Energy','Unilever','Cheetos','Lay’s','Chilli Beans','Alvarez & Marsal','Facebook','Bumble'];
