@@ -45,24 +45,24 @@
 @media (max-width:860px){.rnav button span{font-size:var(--fs-micro);letter-spacing:0}}
 /* contato: lista riscada + Let's Talk em destaque (pedido do Fabio) */
 .s-contact .pains{color:#9A9AA2;font-size:var(--fs-small);letter-spacing:.06em;line-height:1.7;text-decoration:line-through;text-decoration-thickness:1px}
-.s-contact .cta{background:#F2F2F0;color:#221F20;border-color:#F2F2F0;padding:14px 30px;font-size:var(--fs-lead)}
+.s-contact .cta{background:#F2F2F0;color:#111113;border-color:#F2F2F0;padding:14px 30px;font-size:var(--fs-lead)}
 .s-contact .cta:hover{opacity:.85}
 .s-contact .reach{position:static;display:flex;flex-direction:column;align-items:center;gap:clamp(22px,4vh,36px);margin:0 var(--gutter)}
 .s-contact .pains{font-size:var(--fs-lead);letter-spacing:.04em;line-height:1.5;max-width:20em}
 .s-contact .reach a:not(.cta){font-size:var(--fs-lead)}
 /* contato: fundo branco, lista em negrito com riscado, Let's Talk em destaque (referência do Fabio) */
-.s-contact .pains{display:block;font-family:var(--display);font-weight:760;font-size:var(--fs-h1);line-height:1.12;letter-spacing:-.01em;text-transform:none;color:#221F20;text-decoration:line-through;text-decoration-thickness:.045em;text-decoration-color:rgba(17,17,19,.85);max-width:none;margin:0 auto;white-space:nowrap}
+.s-contact .pains{display:block;font-family:var(--display);font-weight:760;font-size:var(--fs-h1);line-height:1.12;letter-spacing:-.01em;text-transform:none;color:#111113;text-decoration:line-through;text-decoration-thickness:.045em;text-decoration-color:rgba(17,17,19,.85);max-width:none;margin:0 auto;white-space:nowrap}
 @media (max-width:860px){.s-contact .pains{font-size:var(--fs-h2);text-decoration-thickness:.05em}}
-.s-contact .cta{background:#221F20;color:#FFFFFF;border:0;padding:16px 36px;font-size:var(--fs-h2);font-family:var(--body);font-weight:500}
-.s-contact .reach a:not(.cta){color:#221F20}
+.s-contact .cta{background:#111113;color:#FFFFFF;border:0;padding:16px 36px;font-size:var(--fs-h2);font-family:var(--body);font-weight:500}
+.s-contact .reach a:not(.cta){color:#111113}
 .s-contact .big{display:none}
 /* alternância de fundo: promessa, motion & IA e clientes em escuro */
-.s-promise .stage{background:linear-gradient(160deg,#221F20 0%,#232353 100%)!important;color:#F2F2F0}
+.s-promise .stage{background:linear-gradient(160deg,#111113 0%,#1E1A3F 55%,#334694 100%)!important;color:#F2F2F0}
 .s-gen .stage,.s-clients .stage{background:var(--dark)!important;color:#F2F2F0}
 .s-promise p,.s-promise .sig,.s-gen h2,.s-gen p,.s-clients h2,.s-clients p,.s-clients .mono,.s-gen .mono{color:#F2F2F0}
 .s-promise .sig,.prov-sig,.s-clients .mono,.s-gen .mono{color:#9A9AA2}
 /* provocação: fundo na cor da paleta (violeta), texto claro */
-.s-prov .stage{background:linear-gradient(160deg,#334694 0%,#232353 100%)!important;color:#F2F0F5}
+.s-prov .stage{background:linear-gradient(90deg,#232353 0%,#CF5790 100%)!important;color:#F2F0F5}
 .s-prov .prov-line{color:#F2F0F5!important}
 .s-prov .prov-sig{color:rgba(242,240,245,.88)!important}
 </style>
@@ -74,7 +74,7 @@
 :root{
   --fs-display:clamp(40px,5.6vw,96px); --fs-h1:clamp(30px,4.4vw,64px); --fs-h2:clamp(24px,2.8vw,40px);
   --fs-lead:clamp(18px,1.8vw,24px); --fs-body:18px; --fs-small:15px; --fs-micro:12px; --sp-2:12px;
-  --bg:#F2F2F0; --ink:#221F20; --ink-2:#5E5E64; --line:#D5D5D1; --dark:#221F20; --tile:#1E1E21;
+  --bg:#F2F2F0; --ink:#111113; --ink-2:#5E5E64; --line:#D5D5D1; --dark:#111113; --tile:#1E1E21;
   --display:"Anybody","Arial Narrow",system-ui,sans-serif;
   --body:"Hanken Grotesk",ui-sans-serif,system-ui,sans-serif;
   --tx:70; --mono:"Martian Mono",ui-monospace,"SF Mono",Menlo,monospace;
@@ -129,10 +129,10 @@ main{display:block}
 .s-hero .stage{background:var(--bg)}
 .hero-blob{position:absolute;inset:-4%;--z:1;--k:1;--o:1;opacity:var(--o);
 background:
- radial-gradient(circle calc(40vmin * var(--k) * var(--z)) at 41% 43%,#232353 0%,rgba(124,92,255,.55) 42%,rgba(124,92,255,0) 78%),
- radial-gradient(circle calc(34vmin * var(--k) * var(--z)) at 57% 32%,#E8AA50 0%,rgba(255,122,46,.5) 40%,rgba(255,122,46,0) 76%),
- radial-gradient(circle calc(40vmin * var(--k) * var(--z)) at 60% 58%,#CF5790 0%,rgba(255,61,154,.55) 42%,rgba(255,61,154,0) 78%),
- radial-gradient(circle calc(30vmin * var(--k) * var(--z)) at 33% 60%,#334694 0%,rgba(53,200,255,.5) 40%,rgba(53,200,255,0) 76%),
+ radial-gradient(circle calc(40vmin * var(--k) * var(--z)) at 41% 43%,#7C5CFF 0%,rgba(124,92,255,.55) 42%,rgba(124,92,255,0) 78%),
+ radial-gradient(circle calc(34vmin * var(--k) * var(--z)) at 57% 32%,#FF7A2E 0%,rgba(255,122,46,.5) 40%,rgba(255,122,46,0) 76%),
+ radial-gradient(circle calc(40vmin * var(--k) * var(--z)) at 60% 58%,#FF3D9A 0%,rgba(255,61,154,.55) 42%,rgba(255,61,154,0) 78%),
+ radial-gradient(circle calc(30vmin * var(--k) * var(--z)) at 33% 60%,#35C8FF 0%,rgba(53,200,255,.5) 40%,rgba(53,200,255,0) 76%),
  radial-gradient(circle calc(32vmin * var(--k) * var(--z)) at 50% 50%,rgba(255,61,154,.5) 0%,rgba(255,61,154,0) 72%)}
 .hero-mark{position:absolute;left:50%;top:50%;width:min(54vw,980px);transform:translate(-50%,-50%);color:var(--ink);z-index:2}
 /* fade do logo em fill-opacity (pintura), não em opacity: não cria camada de composição, que piscava preta */
@@ -155,7 +155,7 @@ html:not(.motion) .mk-in,.mk-in.ready{opacity:1}
 .hero-dim{position:absolute;inset:0;background:var(--dark);opacity:0;z-index:4;pointer-events:none}
 @media (prefers-reduced-motion:no-preference){.hero-blob{animation:blobDrift 22s ease-in-out infinite}}
 @keyframes blobDrift{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(-1%,.8%,0)}}
-.hero-fallback{position:absolute;inset:0;background:radial-gradient(24% 32% at 44% 50%,#CF5790,transparent 70%),radial-gradient(22% 30% at 57% 54%,#E8AA50,transparent 70%),radial-gradient(18% 26% at 38% 58%,#334694,transparent 70%),radial-gradient(20% 26% at 58% 42%,#232353,transparent 70%),var(--bg)}
+.hero-fallback{position:absolute;inset:0;background:radial-gradient(24% 32% at 44% 50%,#FF3D9A,transparent 70%),radial-gradient(22% 30% at 57% 54%,#FF7A2E,transparent 70%),radial-gradient(18% 26% at 38% 58%,#35C8FF,transparent 70%),radial-gradient(20% 26% at 58% 42%,#7C5CFF,transparent 70%),var(--bg)}
 
 /* 2 · work: a row that becomes the screen */
 .s-work .stage{background:var(--dark);color:#F2F2F0;display:grid;place-items:center}
@@ -249,7 +249,7 @@ html.motion .allg li.in{opacity:1;transform:none}
 .grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;aspect-ratio:1;width:min(100%,calc(100svh - 150px));justify-self:center}
 .grid9 i{display:block;background:linear-gradient(160deg,#A9A9A6,#7E7E7B 60%,#6A6A68);transform-origin:center}
 .grid9 i.pick{position:relative;z-index:2;overflow:hidden;background:#150d1c}
-.grid9 i.pick::before{content:"";position:absolute;inset:-25%;background:radial-gradient(30% 40% at 32% 40%,#CF5790,transparent 70%),radial-gradient(30% 40% at 68% 58%,#E8AA50,transparent 70%),radial-gradient(26% 36% at 45% 72%,#334694,transparent 70%),radial-gradient(28% 36% at 62% 30%,#232353,transparent 70%);filter:blur(14px);opacity:var(--alive,0);animation:swirl 16s linear infinite}
+.grid9 i.pick::before{content:"";position:absolute;inset:-25%;background:radial-gradient(30% 40% at 32% 40%,#FF3D9A,transparent 70%),radial-gradient(30% 40% at 68% 58%,#FF7A2E,transparent 70%),radial-gradient(26% 36% at 45% 72%,#35C8FF,transparent 70%),radial-gradient(28% 36% at 62% 30%,#7C5CFF,transparent 70%);filter:blur(14px);opacity:var(--alive,0);animation:swirl 16s linear infinite}
 .grid9 i.pick::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,#A9A9A6,#7E7E7B 60%,#6A6A68);opacity:calc(1 - var(--alive,0))}
 @keyframes swirl{to{transform:rotate(360deg)}}
 
@@ -273,7 +273,7 @@ html.motion .allg li.in{opacity:1;transform:none}
 .cl-head .ag{color:var(--ink-2);max-width:70ch}
 
 /* 6 · contact zoom */
-.s-contact .stage{background:#FFFFFF;color:#221F20;display:grid;place-items:center;text-align:center;padding-top:var(--bar)}
+.s-contact .stage{background:#FFFFFF;color:#111113;display:grid;place-items:center;text-align:center;padding-top:var(--bar)}
 .big{font-family:var(--display);font-weight:760;font-size:clamp(56px,14vw,230px);line-height:.9;letter-spacing:-.03em;font-variation-settings:"wdth" 84;will-change:transform}
 .reach{position:absolute;left:0;right:0;bottom:clamp(28px,7vh,72px);display:flex;justify-content:center;gap:clamp(16px,4vw,56px);flex-wrap:wrap;opacity:0;padding-inline:var(--gutter)}
 .reach a{font-size:var(--fs-lead);text-underline-offset:5px;text-decoration-thickness:1px}
@@ -432,14 +432,14 @@ const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
 const lerp=(a,b,k)=>a+(b-a)*k;
 const KIND={filme:{pt:'Filme',en:'Film'},campanha:{pt:'Campanha',en:'Campaign'},evento:{pt:'Evento',en:'Event'},animacao:{pt:'Animação',en:'Animation'}};
 const W=[
-  {id:'wellhub',cl:'Wellhub',tt:{pt:'Life at Wellhub',en:'Life at Wellhub'},ag:'Grupo Nose',k:'filme',f:1,c:['#E8AA50','#CF5790','#FFC247'],b:'#2a0f1c',d:{pt:'Um filme sobre cultura, feito para atrair talentos. Antes de tudo, sobre as pessoas que fazem essa cultura existir todos os dias.',en:'A culture film made to attract talent. Above all, it’s about the people who make that culture happen every day.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Edição',en:'Editing'},'Rodrigo Lopes'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]},
+  {id:'wellhub',cl:'Wellhub',tt:{pt:'Life at Wellhub',en:'Life at Wellhub'},ag:'Grupo Nose',k:'filme',f:1,c:['#FF7A2E','#FF3D9A','#FFC247'],b:'#2a0f1c',d:{pt:'Um filme sobre cultura, feito para atrair talentos. Antes de tudo, sobre as pessoas que fazem essa cultura existir todos os dias.',en:'A culture film made to attract talent. Above all, it’s about the people who make that culture happen every day.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Edição',en:'Editing'},'Rodrigo Lopes'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]},
   {id:'googlebf',cl:'Google',tt:{pt:'Black Friday Connections',en:'Black Friday Connections'},ag:'Hands',k:'evento',c:['#4285F4','#EA4335','#FBBC05'],b:'#0e1122',d:{pt:'Cobertura e filmes do maior evento do Google na Black Friday, com a jornada de cada consumidor como fio condutor.',en:'Coverage and films for Google’s biggest Black Friday event, built around each shopper’s journey.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Edição',en:'Editing'},'Rodrigo Lopes'],[{pt:'Motion',en:'Motion'},'Daniel Aguiar']]},
-  {id:'youtube',cl:'YouTube',tt:{pt:'Evento global',en:'Global event'},ag:'Hands',k:'evento',c:['#ff0000','#ffffff','#232353'],b:'#120608',d:{pt:'Cobertura do evento global da plataforma.',en:'Coverage of the platform’s global event.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Edição',en:'Editing'},'Fabio Lopes'],[{pt:'Motion',en:'Motion'},'Marcel Lopes']]},
-  {id:'accenture',cl:'Accenture',tt:{pt:'A história de uma área',en:'A department’s story'},ag:'—',k:'animacao',c:['#a100ff','#334694','#ffffff'],b:'#0d0616',d:{pt:'Animação que conta a história de uma área da empresa.',en:'An animation telling the story of one of the company’s departments.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]},
+  {id:'youtube',cl:'YouTube',tt:{pt:'Evento global',en:'Global event'},ag:'Hands',k:'evento',c:['#ff0000','#ffffff','#7C5CFF'],b:'#120608',d:{pt:'Cobertura do evento global da plataforma.',en:'Coverage of the platform’s global event.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Edição',en:'Editing'},'Fabio Lopes'],[{pt:'Motion',en:'Motion'},'Marcel Lopes']]},
+  {id:'accenture',cl:'Accenture',tt:{pt:'A história de uma área',en:'A department’s story'},ag:'—',k:'animacao',c:['#a100ff','#35C8FF','#ffffff'],b:'#0d0616',d:{pt:'Animação que conta a história de uma área da empresa.',en:'An animation telling the story of one of the company’s departments.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]},
   {id:'chilli',cl:'Chilli Beans',tt:{pt:'Promo',en:'Promo'},ag:'Tridente',k:'filme',c:['#e30613','#111111','#FFD23F'],b:'#140404',d:{pt:'Promo com direção de arte feita pela produtora.',en:'A promo with art direction by the studio.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]},
-  {id:'alvarez',cl:'Alvarez & Marsal',tt:{pt:'Filme institucional',en:'Corporate film'},ag:'—',k:'filme',c:['#003a70','#334694','#ffffff'],b:'#040a14',d:{pt:'Institucional de uma consultoria global.',en:'A corporate film for a global consultancy.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Edição',en:'Editing'},'Rodrigo Lopes'],[{pt:'Motion',en:'Motion'},'Marcel Lopes']]},
+  {id:'alvarez',cl:'Alvarez & Marsal',tt:{pt:'Filme institucional',en:'Corporate film'},ag:'—',k:'filme',c:['#003a70','#35C8FF','#ffffff'],b:'#040a14',d:{pt:'Institucional de uma consultoria global.',en:'A corporate film for a global consultancy.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Edição',en:'Editing'},'Rodrigo Lopes'],[{pt:'Motion',en:'Motion'},'Marcel Lopes']]},
  {id:'bourbon',cl:'Bourbon',tt:{pt:'Bourbon Resort',en:'Bourbon Resort'},ag:'—',k:'filme',c:['#0b5d3b','#f2c14e','#ffffff'],b:'#06140e',d:{pt:'Filme do Bourbon Resort.',en:'A film for Bourbon Resort.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Edição',en:'Editing'},'Pedro'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]},
- {id:'accenture-renew',cl:'Accenture',tt:{pt:'Renew Resources',en:'Renew Resources'},ag:'—',k:'animacao',c:['#a100ff','#334694','#ffffff'],b:'#0d0616',d:{pt:'Motion design para a Accenture.',en:'Motion design for Accenture.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]}
+ {id:'accenture-renew',cl:'Accenture',tt:{pt:'Renew Resources',en:'Renew Resources'},ag:'—',k:'animacao',c:['#a100ff','#35C8FF','#ffffff'],b:'#0d0616',d:{pt:'Motion design para a Accenture.',en:'Motion design for Accenture.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]}
 ];
 const FB="/filmes/";
 const LOC={"youtube": "youtube-brandcast", "alvarez": "alvarez-marsal", "wellhub": "wellhub", "accenture": "accenture-telefonica", "googlebf": "google-black-friday-2024", "chilli": "chilli-beans", "bourbon": "bourbon-resort", "accenture-renew": "accenture-renew"};
