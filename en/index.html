@@ -279,6 +279,9 @@ html.motion .allg li.in{opacity:1;transform:none}
 .words .wseg.b:last-child{margin-top:1.6em;margin-bottom:0}
 .words .wseg.k{font-size:var(--fs-h2);font-weight:650;line-height:1.15;letter-spacing:-.015em;margin-bottom:.12em}
 .words .wseg.k:nth-child(5){color:#CF5790}
+.words.rv .wseg{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.words.rv.in .wseg{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.words.rv .wseg{opacity:1;transform:none;transition:none}}
 .s-words .stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:var(--sp-3);align-items:start}
 @media (max-width:700px){.s-words .stage{grid-template-columns:1fr}}
 
@@ -612,7 +615,7 @@ if(MOTION)scene($('.s-gen'),applyGen);else applyGen(1);
 const WORDS={pt:[{c:"l",t:"22 anos de experiência nos ensinaram uma coisa simples: trabalho bom não precisa ser complicado."},{c:"b",t:"Trazemos experiência, curiosidade e as pessoas certas para cada desafio."},{c:"k",t:"Escutamos."},{c:"k",t:"Pensamos."},{c:"k",t:"Fazemos acontecer."},{c:"b",t:"Menos atrito. Mais criação. É assim que trabalhamos."}],en:[{c:"l",t:"22 years of experience have shaped a simple belief: good work doesn’t have to be complicated."},{c:"b",t:"We bring experience, curiosity and the right people to every challenge."},{c:"k",t:"We listen."},{c:"k",t:"We think."},{c:"k",t:"We make it happen."},{c:"b",t:"Less friction. More creation. That’s how we work."}]};
 let wspans=[];function buildWords(){const h=$('#wordsH');h.innerHTML='';wspans=[];const segs=t(WORDS);segs.forEach(sg=>{const d=document.createElement('span');d.className='wseg '+sg.c;sg.t.split(' ').forEach((w,i,arr)=>{const s=document.createElement('span');s.textContent=w;d.appendChild(s);wspans.push(s);if(i<arr.length-1)d.appendChild(document.createTextNode(' '))});h.appendChild(d)});h.setAttribute('aria-label',segs.map(x=>x.t).join(' '))}
 function applyWords(p){const n=wspans.length;const lit=Math.round(clamp01((p-.08)/.72)*n);wspans.forEach((s,i)=>s.classList.toggle('on',i<lit))}
-buildWords();applyWords(1);
+buildWords();(function(){const h=$('#wordsH');if(!h)return;h.classList.add('rv');h.querySelectorAll('.wseg').forEach((x,i)=>x.style.setProperty('--d',(i*.12).toFixed(2)+'s'));if(!('IntersectionObserver' in window)){h.classList.add('in');return}const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){h.classList.add('in');io.disconnect()}}),{threshold:.25});io.observe(h)})();
 
 /* ---------- 5 · clients slide sideways ---------- */
 const CL=['Google','YouTube','Wellhub','Heineken','Budweiser','Spaten','Havaianas','Colgate','Itaú','Accenture','Ray-Ban','Electrolux','Red Bull','Monster Energy','Unilever','Cheetos','Lay’s','Chilli Beans','Alvarez & Marsal','Facebook','Bumble'];
