@@ -60,6 +60,15 @@
 .offices a{background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;text-decoration:none;transition:background-size .6s cubic-bezier(.2,.7,.2,1)}
 .offices a:hover,.offices a:focus-visible{background-size:100% 1px}
 @media (prefers-reduced-motion:reduce){.s-brand p{transition:none;letter-spacing:.24em}.offices a{transition:none}}
+.fx-feat{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(10px,1.2vw,18px);margin:0 0 clamp(24px,3vw,44px);padding:0;list-style:none}
+.fx-feat button{display:block;width:100%;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.fx-feat .ft{display:block;aspect-ratio:16/9;background:center/cover no-repeat var(--tile);outline:2px solid transparent;outline-offset:-2px;transition:outline-color .25s,transform .4s cubic-bezier(.2,.7,.2,1)}
+.fx-feat button:hover .ft{transform:translateY(-3px)}
+.fx-feat button[aria-current="true"] .ft{outline-color:#fff}
+.fx-feat .fc{display:block;margin-top:10px;font-weight:600;font-size:max(14px,1vw)}
+.fx-feat .fp{display:block;opacity:.65;font-size:max(13px,.85vw)}
+.fx-feat button:focus-visible{outline:2px solid #fff;outline-offset:4px}
+@media(max-width:860px){.fx-feat{grid-auto-flow:column;grid-auto-columns:62%;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.fx-feat li{scroll-snap-align:start}}
 </style>
 <title>Animamus</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -301,7 +310,7 @@ html.motion .s-promise{background:var(--dark)}
     </div>
   </section>
 
-  <section class="s-films pad" id="trabalhos" aria-labelledby="fxH"><div class="fx-head"><h2 id="fxH">Films</h2><span class="mono" id="fxCount"></span></div><div class="fx"><div class="fx-main"><div class="fx-stage" id="fxStage"></div><div class="fx-info" id="fxInfo" aria-live="polite"></div></div><div class="fx-side"><ol class="fx-list" id="fxList"></ol></div></div></section>
+  <section class="s-films pad" id="trabalhos" aria-labelledby="fxH"><div class="fx-head"><h2 id="fxH">Films</h2><span class="mono" id="fxCount"></span></div><ul class="fx-feat" id="fxFeat" aria-label="Featured"></ul><div class="fx"><div class="fx-main"><div class="fx-stage" id="fxStage"></div><div class="fx-info" id="fxInfo" aria-live="polite"></div></div><div class="fx-side"><ol class="fx-list" id="fxList"></ol></div></div></section>
 
   <section class="scene s-prov" style="--len:110" aria-label="Provocation"><div class="stage"><h2 class="prov-line" id="provLine">Making an image has never been easier.<br>Making one that someone remembers, never harder.</h2></div></section>
 
@@ -421,10 +430,11 @@ if(MOTION)scene($('.s-hero'),p=>{
 /* ---------- Provocação: line settles in ---------- */
 if(MOTION)scene($('.s-prov'),p=>{const o=clamp01((p-.12)/.38);const l=$('#provLine');l.style.opacity=o.toFixed(3);l.style.transform='translateY('+((1-o)*24).toFixed(1)+'px)'});else $('#provLine').style.opacity=1;
 /* ---------- filmes: lista + player (Vimeo carrega só no clique) ---------- */
+const FEAT=['adidas','hermeto','simone','airsilva','wellhub'];
 const ORDER=['adidas','hermeto','airsilva','spaten','simone','autism','wellhub','alvarez','bourbon','accenture','accenture-renew','chilli','googlebf','youtube'];
 const GRP={filme:{pt:'Institucional',en:'Corporate'},animacao:{pt:'Institucional',en:'Corporate'},evento:{pt:'Eventos',en:'Events'},case:{pt:'Cases',en:'Cases'}};
 const F=ORDER.map(id=>W.find(w=>w.id===id)).filter(Boolean);
-const fxStage=$('#fxStage'),fxInfo=$('#fxInfo'),fxList=$('#fxList');
+const fxFeat=$('#fxFeat');const fxStage=$('#fxStage'),fxInfo=$('#fxInfo'),fxList=$('#fxList');
 let fxCur=0,fxPlaying=false;
 let vq=null;function withVimeo(cb){if(window.Vimeo)return cb();if(vq)return vq.push(cb);vq=[cb];const sc=document.createElement('script');sc.src='https://player.vimeo.com/api/player.js';sc.onload=()=>{vq.forEach(f=>f());vq=[]};document.head.appendChild(sc)}
 const vurl=w=>'https://player.vimeo.com/video/'+w.vm+'?dnt=1&muted=0&title=0&byline=0&portrait=0&playsinline=1';
@@ -437,10 +447,12 @@ function fxShow(i,play,hash){
   fxInfo.querySelector('.fx-k').textContent=t(w.cl)+(w.ag!=='—'?' · '+w.ag:'');fxInfo.querySelector('h3').textContent=t(w.tt);fxInfo.querySelector('p').textContent=t(w.d);
   const dl=fxInfo.querySelector('dl');(w.x||[]).forEach(([k,v])=>{const d=document.createElement('div');d.innerHTML='<dt class="mono"></dt><dd></dd>';d.firstChild.textContent=t(k);d.lastChild.textContent=v;dl.appendChild(d)});
   [...fxList.querySelectorAll('button')].forEach((b,k)=>b.setAttribute('aria-current',k===i));
+  [...fxFeat.querySelectorAll('button')].forEach(b=>b.setAttribute('aria-current',b.dataset.id===w.id));
   if(hash)history.replaceState(null,'','#/'+w.id)}
 function buildFilms(){
   $('#fxCount').textContent=String(F.length).padStart(2,'0')+(L==='en'?' films':' filmes');
-  fxList.innerHTML='';
+  fxList.innerHTML='';fxFeat.innerHTML='';
+  FEAT.forEach(id=>{const i=F.findIndex(w=>w.id===id);if(i<0)return;const w=F[i];const li=document.createElement('li');li.innerHTML='<button type="button"><span class="ft"></span><span class="fc"></span><span class="fp"></span></button>';const b=li.firstChild;b.dataset.id=id;if(w.img)b.querySelector('.ft').style.backgroundImage='url('+w.img+')';b.querySelector('.fc').textContent=t(w.cl);b.querySelector('.fp').textContent=t(w.tt);b.onclick=()=>{fxShow(i,true,true);fxStage.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'})};fxFeat.appendChild(li)});
   let lastG='';
   F.forEach((w,i)=>{const gk=t(GRP[w.k]||GRP.filme);if(gk!==lastG){lastG=gk;const h=document.createElement('li');h.className='grp mono';h.setAttribute('role','presentation');h.textContent=gk;fxList.appendChild(h)}const li=document.createElement('li');li.innerHTML='<button type="button"><span class="mono n"></span><span class="th"></span><span><span class="cl"></span><span class="pj"></span></span></button>';
     const b=li.firstChild;b.querySelector('.n').textContent=String(i+1).padStart(2,'0');if(w.img)b.querySelector('.th').style.backgroundImage='url('+w.img+')';
