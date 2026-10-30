@@ -339,7 +339,7 @@ html.motion .s-promise{background:var(--dark)}
     <li><strong>Finalização</strong><span>Edição, motion design, cor, som, versões e entregas para cada meio.</span></li>
   </ul>
 
-  <section class="scene s-clients" style="--len:100" aria-labelledby="clh">
+  <section class="scene s-clients" style="--len:400" aria-labelledby="clh">
     <div class="stage">
       <div class="cl-head"><h2 id="clh" class="mono" style="font-family:var(--mono);font-weight:400">Com quem já filmamos</h2><span class="ag mono">Agências parceiras · Africa · AlmapBBDO · GUT · Hands · RED · Grupo Nose · Tridente · Sherpa 42 · Touch Branding · PalmEra</span></div>
       <div class="strip" id="strip"></div>
@@ -491,7 +491,7 @@ buildWords();(function(){const h=$('#wordsH');if(!h)return;h.classList.add('rv')
 /* ---------- 5 · clients slide sideways ---------- */
 const CL=['Google','YouTube','Wellhub','Heineken','Budweiser','Spaten','Havaianas','Colgate','Itaú','Accenture','Ray-Ban','Electrolux','Red Bull','Monster Energy','Unilever','Cheetos','Lay’s','Chilli Beans','Alvarez & Marsal','Facebook','Bumble'];
 const strip=$('#strip');CL.forEach((c,i)=>{const s=document.createElement('span');s.textContent=c;strip.appendChild(s);if(i<CL.length-1){const d=document.createElement('span');d.className='sl';d.textContent='/';d.setAttribute('aria-hidden','true');strip.appendChild(d)}});
-if(MOTION)scene($('.s-clients'),p=>{const max=Math.max(0,strip.scrollWidth-innerWidth+40);strip.style.transform='translate3d('+(-max*clamp01((p-.2)/1.2)).toFixed(1)+'px,0,0)'});
+if(MOTION)scene($('.s-clients'),p=>{const max=Math.max(0,strip.scrollWidth-innerWidth+40);strip.style.transform='translate3d('+(-max*clamp01((p-.12)/.76)).toFixed(1)+'px,0,0)'});
 
 /* ---------- 6 · contact comes forward ---------- */
 
