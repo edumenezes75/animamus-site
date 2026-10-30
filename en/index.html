@@ -254,9 +254,9 @@ html:not(.motion) .s-contact .stage{padding-block:80px}
   .offices{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
-.s-films{background:var(--dark);color:#F2F2F0;padding-block:clamp(112px,9vw,140px) calc(clamp(40px,5vw,80px) + var(--tx) * .8svh)}
-.fx-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:clamp(22px,3vw,40px)}
-.fx-head h2{margin:0;font-family:var(--display);font-weight:760;font-size:clamp(40px,5.6vw,88px);line-height:.95;letter-spacing:-.02em;font-variation-settings:"wdth" 84}
+.s-films{background:var(--dark);color:#F2F2F0;padding-block:clamp(96px,7.5vw,112px) calc(clamp(40px,5vw,80px) + var(--tx) * .8svh)}
+.fx-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:clamp(18px,2vw,28px);padding-bottom:14px;border-bottom:1px solid rgba(242,242,240,.16)}
+.fx-head h2{margin:0;font-family:var(--display);font-weight:760;font-size:clamp(20px,1.8vw,26px);line-height:1;letter-spacing:-.01em}
 .fx-head .mono{opacity:.6}
 .fx{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(280px,1fr);gap:clamp(24px,3.5vw,56px);align-items:start}
 .fx-stage{position:relative;aspect-ratio:16/9;background:var(--tile);overflow:hidden}
@@ -267,27 +267,28 @@ html:not(.motion) .s-contact .stage{padding-block:80px}
 .fx-play::before{content:"";position:absolute;left:54%;top:50%;transform:translate(-50%,-50%);border-style:solid;border-width:clamp(9px,1.2vw,15px) 0 clamp(9px,1.2vw,15px) clamp(15px,2vw,24px);border-color:transparent transparent transparent #fff}
 .fx-poster:hover .fx-play{transform:translate(-50%,-50%) scale(1.07);background:rgba(17,17,19,.55)}
 .fx-poster:focus-visible,.fx-list button:focus-visible{outline:2px solid #fff;outline-offset:3px}
-.fx-info{margin-top:clamp(18px,2.4vw,30px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px clamp(24px,4vw,56px)}
-.fx-info .fx-k{display:block;opacity:.6;margin-bottom:10px}
-.fx-info h3{margin:0;font-family:var(--display);font-weight:760;font-size:clamp(28px,3.4vw,52px);line-height:.95;letter-spacing:-.01em}
-.fx-info p{margin:14px 0 0;max-width:52ch;color:rgba(242,242,240,.74)}
-.fx-f{margin:0;display:grid;gap:10px;align-content:start}
-.fx-f div{display:grid;grid-template-columns:minmax(84px,.45fr) 1fr;gap:12px}
-.fx-f dt{opacity:.55}
+.fx-info{margin-top:clamp(18px,2.2vw,28px)}
+.fx-info .fx-k{display:block;opacity:.72;margin-bottom:10px}
+.fx-info h3{margin:0;font-family:var(--display);font-weight:760;font-size:clamp(28px,3.1vw,46px);line-height:.98;letter-spacing:-.01em}
+.fx-info p{margin:14px 0 0;max-width:62ch;color:rgba(242,242,240,.78)}
+.fx-f{margin:0;display:flex;flex-wrap:wrap;gap:8px 32px}
+.fx-f div{display:flex;gap:10px;align-items:baseline}
+.fx-meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 32px;margin-top:20px;padding-top:16px;border-top:1px solid rgba(242,242,240,.16)}
+.fx-f dt{opacity:.6}
 .fx-f dd{margin:0}
 .fx-cta{display:inline-block;margin-top:22px;color:inherit;text-decoration:none;border-bottom:1px solid rgba(242,242,240,.4);padding-bottom:3px;transition:border-color .25s}
 .fx-cta:hover{border-color:#fff}
-.fx-copy{margin-top:18px;padding:0;border:0;background:none;color:inherit;opacity:.6;cursor:pointer;font-size:max(13px,var(--fs-micro,13px));text-decoration:underline;text-underline-offset:3px}
+.fx-copy{margin:0 0 0 auto;padding:0;border:0;background:none;color:inherit;opacity:.65;cursor:pointer;font-size:max(13px,var(--fs-micro,13px));text-decoration:underline;text-underline-offset:3px}
 .fx-copy:hover{opacity:1}
 .fx-list{list-style:none;margin:0;padding:0}
 .fx-list li{border-top:1px solid rgba(242,242,240,.16)}
 .fx-list li:last-child{border-bottom:1px solid rgba(242,242,240,.16)}
-.fx-list button{display:grid;grid-template-columns:2ch 84px minmax(0,1fr);gap:16px;align-items:center;width:100%;padding:14px 0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;opacity:.5;transition:opacity .25s}
+.fx-list button{display:grid;grid-template-columns:2ch 104px minmax(0,1fr);gap:16px;align-items:center;width:100%;padding:14px 0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;opacity:.5;transition:opacity .25s}
 .fx-list button:hover,.fx-list button[aria-current="true"]{opacity:1}
 .fx-list .th{display:block;aspect-ratio:16/9;background:center/cover no-repeat var(--tile)}
 .fx-list .cl{display:block;font-weight:600}
 .fx-list .pj{display:block;opacity:.7;font-size:.92em}
-@media(max-width:860px){.fx{grid-template-columns:minmax(0,1fr)}.fx-info{grid-template-columns:minmax(0,1fr)}.fx-stage{scroll-margin-top:calc(var(--bar) + 8px)}}
+@media(max-width:860px){.fx{grid-template-columns:minmax(0,1fr)}.fx-stage{scroll-margin-top:calc(var(--bar) + 8px)}}
 </style>
 <script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')}catch(e){}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Animamus", "alternateName": "Animamus Production & Post Production", "url": "https://animamus.art.br/", "logo": "https://animamus.art.br/apple-touch-icon.png", "image": "https://animamus.art.br/og.jpg", "description": "Produtora criativa independente, fundada em São Paulo. Criação, produção e finalização de filmes.", "telephone": "+55 11 98983-7204", "email": "fabio@animamus.art.br", "address": {"@type": "PostalAddress", "streetAddress": "Av. Macuco, 726, 1 andar, sala 1101", "addressLocality": "São Paulo", "addressRegion": "SP", "postalCode": "04523-001", "addressCountry": "BR"}, "sameAs": ["https://www.instagram.com/animamusfilms/", "https://www.facebook.com/animamusfilms"]}</script>
@@ -455,10 +456,10 @@ function fxShow(i,play,hash){
   if(play){const fr=document.createElement('iframe');fr.src=vurl(w);fr.title=t(w.cl)+' — '+t(w.tt);fr.allow='autoplay; fullscreen; picture-in-picture; encrypted-media';fr.allowFullscreen=true;fr.setAttribute('referrerpolicy','strict-origin-when-cross-origin');fxStage.appendChild(fr);withVimeo(()=>{const pl=new Vimeo.Player(fr);const go=()=>{pl.setMuted(false).catch(()=>{});pl.setVolume(1).catch(()=>{});pl.disableTextTrack().catch(()=>{})};pl.ready().then(()=>{go();pl.play().catch(()=>{pl.setMuted(true).then(()=>pl.play()).catch(()=>{})})});pl.on('loaded',go);pl.on('ended',()=>{if(fxStage.contains(fr))fxShow(fxCur+1,true,true)})})}
   else{const b=document.createElement('button');b.type='button';b.className='fx-poster';if(w.img)b.style.backgroundImage='url('+w.img+')';
     b.innerHTML='<span class="fx-play" aria-hidden="true"></span>';b.setAttribute('aria-label',(L==='en'?'Play ':'Reproduzir ')+t(w.cl)+' — '+t(w.tt));b.onclick=()=>fxShow(fxCur,true);fxStage.appendChild(b)}
-  fxInfo.innerHTML='<div><span class="mono fx-k"></span><h3></h3><p></p><button type="button" class="fx-copy mono"></button></div><dl class="fx-f"></dl>';
+  fxInfo.innerHTML='<div><span class="mono fx-k"></span><h3></h3><p></p></div><div class="fx-meta"><dl class="fx-f"></dl><button type="button" class="fx-copy mono"></button></div>';
   fxInfo.querySelector('.fx-k').textContent=t(w.cl)+(w.ag!=='—'?' · '+w.ag:'');fxInfo.querySelector('h3').textContent=t(w.tt);fxInfo.querySelector('p').textContent=t(w.d);
   {const cb=fxInfo.querySelector('.fx-copy'),lab=L==='en'?'Copy film link':'Copiar link do filme';cb.textContent=lab;cb.onclick=()=>{const u=location.origin+location.pathname+'#/'+w.id;const ok=()=>{cb.textContent=L==='en'?'Link copied':'Link copiado';setTimeout(()=>cb.textContent=lab,1800)};try{navigator.clipboard.writeText(u).then(ok,ok)}catch(e){ok()}}}
-  const dl=fxInfo.querySelector('dl');[[{pt:'Formato',en:'Format'},t(KIND[w.k])],...(w.x||[]),[{pt:'Produção',en:'Production'},'Animamus']].forEach(([k,v])=>{const d=document.createElement('div');d.innerHTML='<dt class="mono"></dt><dd></dd>';d.firstChild.textContent=t(k);d.lastChild.textContent=v;dl.appendChild(d)});
+  const dl=fxInfo.querySelector('dl');(w.x||[]).forEach(([k,v])=>{const d=document.createElement('div');d.innerHTML='<dt class="mono"></dt><dd></dd>';d.firstChild.textContent=t(k);d.lastChild.textContent=v;dl.appendChild(d)});
   [...fxList.querySelectorAll('button')].forEach((b,k)=>b.setAttribute('aria-current',k===i));
   if(hash)history.replaceState(null,'','#/'+w.id)}
 function buildFilms(){
