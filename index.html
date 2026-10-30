@@ -445,10 +445,11 @@ const ORDER=['wellhub','youtube','googlebf','chilli','alvarez','bourbon','accent
 const F=ORDER.map(id=>W.find(w=>w.id===id)).filter(Boolean);
 const fxStage=$('#fxStage'),fxInfo=$('#fxInfo'),fxList=$('#fxList');
 let fxCur=0,fxPlaying=false;
-const vurl=w=>'https://player.vimeo.com/video/'+w.vm+'?autoplay=1&dnt=1&title=0&byline=0&portrait=0&playsinline=1';
+let vq=null;function withVimeo(cb){if(window.Vimeo)return cb();if(vq)return vq.push(cb);vq=[cb];const sc=document.createElement('script');sc.src='https://player.vimeo.com/api/player.js';sc.onload=()=>{vq.forEach(f=>f());vq=[]};document.head.appendChild(sc)}
+const vurl=w=>'https://player.vimeo.com/video/'+w.vm+'?dnt=1&muted=0&title=0&byline=0&portrait=0&playsinline=1';
 function fxShow(i,play,hash){
   i=(i+F.length)%F.length;const w=F[i];fxCur=i;fxPlaying=!!play;fxStage.innerHTML='';
-  if(play){const fr=document.createElement('iframe');fr.src=vurl(w);fr.title=t(w.cl)+' — '+t(w.tt);fr.allow='autoplay; fullscreen; picture-in-picture; encrypted-media';fr.allowFullscreen=true;fr.setAttribute('referrerpolicy','strict-origin-when-cross-origin');fxStage.appendChild(fr)}
+  if(play){const fr=document.createElement('iframe');fr.src=vurl(w);fr.title=t(w.cl)+' — '+t(w.tt);fr.allow='autoplay; fullscreen; picture-in-picture; encrypted-media';fr.allowFullscreen=true;fr.setAttribute('referrerpolicy','strict-origin-when-cross-origin');fxStage.appendChild(fr);withVimeo(()=>{const pl=new Vimeo.Player(fr);const go=()=>{pl.setMuted(false).catch(()=>{});pl.setVolume(1).catch(()=>{});pl.disableTextTrack().catch(()=>{})};pl.ready().then(()=>{go();pl.play().catch(()=>{pl.setMuted(true).then(()=>pl.play()).catch(()=>{})})});pl.on('loaded',go)})}
   else{const b=document.createElement('button');b.type='button';b.className='fx-poster';if(w.img)b.style.backgroundImage='url('+w.img+')';
     b.innerHTML='<span class="fx-play" aria-hidden="true"></span>';b.setAttribute('aria-label',(L==='en'?'Play ':'Reproduzir ')+t(w.cl)+' — '+t(w.tt));b.onclick=()=>fxShow(fxCur,true);fxStage.appendChild(b)}
   fxInfo.innerHTML='<div><span class="mono fx-k"></span><h3></h3><p></p></div><dl class="fx-f"></dl>';
