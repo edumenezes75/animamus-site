@@ -283,6 +283,7 @@ html:not(.motion) .s-contact .stage{padding-block:80px}
 .fx-list{list-style:none;margin:0;padding:0}
 .fx-list li{border-top:1px solid rgba(242,242,240,.16)}
 .fx-list li:last-child{border-bottom:1px solid rgba(242,242,240,.16)}
+.fx-list li.grp{border:0;padding:22px 0 10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}.fx-list li.grp:first-child{padding-top:0}
 .fx-list button{display:grid;grid-template-columns:2ch 104px minmax(0,1fr);gap:16px;align-items:center;width:100%;padding:14px 0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;opacity:.5;transition:opacity .25s}
 .fx-list button:hover,.fx-list button[aria-current="true"]{opacity:1}
 .fx-list .th{display:block;aspect-ratio:16/9;background:center/cover no-repeat var(--tile)}
@@ -384,11 +385,11 @@ const W=[
   {id:'wellhub',cl:'Wellhub',tt:{pt:'Life at Wellhub',en:'Life at Wellhub'},ag:'Grupo Nose',k:'filme',f:1,c:['#FF7A2E','#FF3D9A','#FFC247'],b:'#2a0f1c',d:{pt:'Um filme sobre cultura, feito para atrair talentos. Antes de tudo, sobre as pessoas que fazem essa cultura existir todos os dias.',en:'A culture film made to attract talent. Above all, it’s about the people who make that culture happen every day.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Edição',en:'Editing'},'Rodrigo Lopes'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]},
   {id:'googlebf',cl:'Google',tt:{pt:'Black Friday Connections',en:'Black Friday Connections'},ag:'Hands',k:'evento',c:['#4285F4','#EA4335','#FBBC05'],b:'#0e1122',d:{pt:'Cobertura e filmes do maior evento do Google na Black Friday, com a jornada de cada consumidor como fio condutor.',en:'Coverage and films for Google’s biggest Black Friday event, built around each shopper’s journey.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Edição',en:'Editing'},'Rodrigo Lopes'],[{pt:'Motion',en:'Motion'},'Daniel Aguiar']]},
   {id:'youtube',cl:'YouTube',tt:{pt:'Evento global',en:'Global event'},ag:'Hands',k:'evento',c:['#ff0000','#ffffff','#7C5CFF'],b:'#120608',d:{pt:'Cobertura do evento global da plataforma.',en:'Coverage of the platform’s global event.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Edição',en:'Editing'},'Fabio Lopes'],[{pt:'Motion',en:'Motion'},'Marcel Lopes']]},
-  {id:'accenture',cl:'Accenture',tt:{pt:'A história de uma área',en:'A department’s story'},ag:'—',k:'animacao',c:['#a100ff','#35C8FF','#ffffff'],b:'#0d0616',d:{pt:'Animação que conta a história de uma área da empresa.',en:'An animation telling the story of one of the company’s departments.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]},
+  {id:'accenture',cl:'Accenture',tt:{pt:'A história de uma área',en:'A department’s story'},ag:'—',k:'filme',c:['#a100ff','#35C8FF','#ffffff'],b:'#0d0616',d:{pt:'Animação que conta a história de uma área da empresa.',en:'An animation telling the story of one of the company’s departments.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]},
   {id:'chilli',cl:'Chilli Beans',tt:{pt:'Promo',en:'Promo'},ag:'Tridente',k:'filme',c:['#e30613','#111111','#FFD23F'],b:'#140404',d:{pt:'Promo com direção de arte feita pela produtora.',en:'A promo with art direction by the studio.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]},
   {id:'alvarez',cl:'Alvarez & Marsal',tt:{pt:'Filme institucional',en:'Corporate film'},ag:'—',k:'filme',c:['#003a70','#35C8FF','#ffffff'],b:'#040a14',d:{pt:'Institucional de uma consultoria global.',en:'A corporate film for a global consultancy.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Edição',en:'Editing'},'Rodrigo Lopes'],[{pt:'Motion',en:'Motion'},'Marcel Lopes']]},
  {id:'bourbon',cl:'Bourbon',tt:{pt:'Bourbon Resort',en:'Bourbon Resort'},ag:'—',k:'filme',c:['#0b5d3b','#f2c14e','#ffffff'],b:'#06140e',d:{pt:'Filme do Bourbon Resort.',en:'A film for Bourbon Resort.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Edição',en:'Editing'},'Pedro'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]},
- {id:'accenture-renew',cl:'Accenture',tt:{pt:'Renew Resources',en:'Renew Resources'},ag:'—',k:'animacao',c:['#a100ff','#35C8FF','#ffffff'],b:'#0d0616',d:{pt:'Motion design para a Accenture.',en:'Motion design for Accenture.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]}
+ {id:'accenture-renew',cl:'Accenture',tt:{pt:'Renew Resources',en:'Renew Resources'},ag:'—',k:'filme',c:['#a100ff','#35C8FF','#ffffff'],b:'#0d0616',d:{pt:'Motion design para a Accenture.',en:'Motion design for Accenture.'},x:[[{pt:'Direção',en:'Director'},'Fabio Aniya'],[{pt:'Motion',en:'Motion'},'Adriano Lopes']]}
 ];
 const FB="/filmes/";const LOC={"youtube": "youtube-brandcast", "alvarez": "alvarez-marsal", "wellhub": "wellhub", "accenture": "accenture-telefonica", "googlebf": "google-black-friday-2024", "chilli": "chilli-beans", "bourbon": "bourbon-resort", "accenture-renew": "accenture-renew"};const VM={"youtube": "1240949430", "alvarez": "1240991923", "wellhub": "1240940230", "accenture": "1240497375", "googlebf": "1241117565", "chilli": "1241115334", "bourbon": "1240982577", "accenture-renew": "1240920626"};
 W.forEach(w=>{const sl=LOC[w.id];if(sl)w.img=FB+'posters/'+sl+'.jpg';if(VM[w.id])w.vm=VM[w.id];w.x=(w.x||[]).filter(r=>r[0].pt==='Direção'||(w.id==='wellhub'&&r[0].pt==='Edição'))});
@@ -455,7 +456,8 @@ if(MOTION)scene($('.s-hero'),p=>{
 /* ---------- Provocação: line settles in ---------- */
 if(MOTION)scene($('.s-prov'),p=>{const o=clamp01((p-.12)/.38);const l=$('#provLine');l.style.opacity=o.toFixed(3);l.style.transform='translateY('+((1-o)*24).toFixed(1)+'px)'});else $('#provLine').style.opacity=1;
 /* ---------- filmes: lista + player (Vimeo carrega só no clique) ---------- */
-const ORDER=['wellhub','youtube','googlebf','chilli','alvarez','bourbon','accenture','accenture-renew'];
+const ORDER=['wellhub','alvarez','bourbon','accenture','accenture-renew','chilli','googlebf','youtube'];
+const GRP={filme:{pt:'Institucional',en:'Corporate'},animacao:{pt:'Institucional',en:'Corporate'},evento:{pt:'Eventos',en:'Events'},case:{pt:'Cases',en:'Cases'}};
 const F=ORDER.map(id=>W.find(w=>w.id===id)).filter(Boolean);
 const fxStage=$('#fxStage'),fxInfo=$('#fxInfo'),fxList=$('#fxList');
 let fxCur=0,fxPlaying=false;
@@ -475,7 +477,8 @@ function fxShow(i,play,hash){
 function buildFilms(){
   $('#fxCount').textContent=String(F.length).padStart(2,'0')+(L==='en'?' films':' filmes');
   fxList.innerHTML='';
-  F.forEach((w,i)=>{const li=document.createElement('li');li.innerHTML='<button type="button"><span class="mono n"></span><span class="th"></span><span><span class="cl"></span><span class="pj"></span></span></button>';
+  let lastG='';
+  F.forEach((w,i)=>{const gk=t(GRP[w.k]||GRP.filme);if(gk!==lastG){lastG=gk;const h=document.createElement('li');h.className='grp mono';h.setAttribute('role','presentation');h.textContent=gk;fxList.appendChild(h)}const li=document.createElement('li');li.innerHTML='<button type="button"><span class="mono n"></span><span class="th"></span><span><span class="cl"></span><span class="pj"></span></span></button>';
     const b=li.firstChild;b.querySelector('.n').textContent=String(i+1).padStart(2,'0');if(w.img)b.querySelector('.th').style.backgroundImage='url('+w.img+')';
     b.querySelector('.cl').textContent=t(w.cl);b.querySelector('.pj').textContent=t(w.tt);
     b.onclick=()=>{fxShow(i,fxPlaying,true);if(innerWidth<=860)fxStage.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})};fxList.appendChild(li)});
