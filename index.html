@@ -276,10 +276,6 @@ html:not(.motion) .s-contact .stage{padding-block:80px}
 .fx-meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 32px;margin-top:20px;padding-top:16px;border-top:1px solid rgba(242,242,240,.16)}
 .fx-f dt{opacity:.6}
 .fx-f dd{margin:0}
-.fx-cta{display:inline-block;margin-top:22px;color:inherit;text-decoration:none;border-bottom:1px solid rgba(242,242,240,.4);padding-bottom:3px;transition:border-color .25s}
-.fx-cta:hover{border-color:#fff}
-.fx-copy{margin:0 0 0 auto;padding:0;border:0;background:none;color:inherit;opacity:.65;cursor:pointer;font-size:max(13px,var(--fs-micro,13px));text-decoration:underline;text-underline-offset:3px}
-.fx-copy:hover{opacity:1}
 .fx-list{list-style:none;margin:0;padding:0}
 .fx-list li{border-top:1px solid rgba(242,242,240,.16)}
 .fx-list li:last-child{border-bottom:1px solid rgba(242,242,240,.16)}
@@ -326,7 +322,7 @@ html.motion .s-promise{background:var(--dark)}
     </div>
   </section>
 
-  <section class="s-films pad" id="trabalhos" aria-labelledby="fxH"><div class="fx-head"><h2 id="fxH">Filmes</h2><span class="mono" id="fxCount"></span></div><div class="fx"><div class="fx-main"><div class="fx-stage" id="fxStage"></div><div class="fx-info" id="fxInfo" aria-live="polite"></div></div><div class="fx-side"><ol class="fx-list" id="fxList"></ol><a class="fx-cta mono" href="#contato">Falar sobre um projeto →</a></div></div></section>
+  <section class="s-films pad" id="trabalhos" aria-labelledby="fxH"><div class="fx-head"><h2 id="fxH">Filmes</h2><span class="mono" id="fxCount"></span></div><div class="fx"><div class="fx-main"><div class="fx-stage" id="fxStage"></div><div class="fx-info" id="fxInfo" aria-live="polite"></div></div><div class="fx-side"><ol class="fx-list" id="fxList"></ol></div></div></section>
 
   <section class="scene s-prov" style="--len:110" aria-label="Provocação"><div class="stage"><h2 class="prov-line" id="provLine">Nunca foi tão fácil fazer uma imagem.<br>Nem tão difícil fazer uma que alguém lembre.</h2></div></section>
 
@@ -474,9 +470,8 @@ function fxShow(i,play,hash){
   if(play){const fr=document.createElement('iframe');fr.src=vurl(w);fr.title=t(w.cl)+' — '+t(w.tt);fr.allow='autoplay; fullscreen; picture-in-picture; encrypted-media';fr.allowFullscreen=true;fr.setAttribute('referrerpolicy','strict-origin-when-cross-origin');fxStage.appendChild(fr);withVimeo(()=>{const pl=new Vimeo.Player(fr);const go=()=>{pl.setMuted(false).catch(()=>{});pl.setVolume(1).catch(()=>{});pl.disableTextTrack().catch(()=>{})};pl.ready().then(()=>{go();pl.play().catch(()=>{pl.setMuted(true).then(()=>pl.play()).catch(()=>{})})});pl.on('loaded',go);pl.on('ended',()=>{if(fxStage.contains(fr))fxShow(fxCur+1,true,true)})})}
   else{const b=document.createElement('button');b.type='button';b.className='fx-poster';if(w.img)b.style.backgroundImage='url('+w.img+')';
     b.innerHTML='<span class="fx-play" aria-hidden="true"></span>';b.setAttribute('aria-label',(L==='en'?'Play ':'Reproduzir ')+t(w.cl)+' — '+t(w.tt));b.onclick=()=>fxShow(fxCur,true);fxStage.appendChild(b)}
-  fxInfo.innerHTML='<div><span class="mono fx-k"></span><h3></h3><p></p></div><div class="fx-meta"><dl class="fx-f"></dl><button type="button" class="fx-copy mono"></button></div>';
+  fxInfo.innerHTML='<div><span class="mono fx-k"></span><h3></h3><p></p></div><div class="fx-meta"><dl class="fx-f"></dl></div>';
   fxInfo.querySelector('.fx-k').textContent=t(w.cl)+(w.ag!=='—'?' · '+w.ag:'');fxInfo.querySelector('h3').textContent=t(w.tt);fxInfo.querySelector('p').textContent=t(w.d);
-  {const cb=fxInfo.querySelector('.fx-copy'),lab=L==='en'?'Copy film link':'Copiar link do filme';cb.textContent=lab;cb.onclick=()=>{const u=location.origin+location.pathname+'#/'+w.id;const ok=()=>{cb.textContent=L==='en'?'Link copied':'Link copiado';setTimeout(()=>cb.textContent=lab,1800)};try{navigator.clipboard.writeText(u).then(ok,ok)}catch(e){ok()}}}
   const dl=fxInfo.querySelector('dl');(w.x||[]).forEach(([k,v])=>{const d=document.createElement('div');d.innerHTML='<dt class="mono"></dt><dd></dd>';d.firstChild.textContent=t(k);d.lastChild.textContent=v;dl.appendChild(d)});
   [...fxList.querySelectorAll('button')].forEach((b,k)=>b.setAttribute('aria-current',k===i));
   if(hash)history.replaceState(null,'','#/'+w.id)}
