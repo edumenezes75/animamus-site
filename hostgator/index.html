@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animamus — teste de filmes 1080p</title>
+<style>
+:root{--bg:#111113;--ink:#F2F2F0;--mute:#A8A8B0;--gut:16px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{padding:32px var(--gut) 8px}
+header h1{font-size:clamp(22px,3vw,34px);margin:0 0 8px;font-weight:650}
+header p{margin:0;color:var(--mute);font-size:15px;line-height:1.5}
+main{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,520px),1fr));gap:28px;padding:24px var(--gut) 56px}
+figure{margin:0}
+video{width:100%;height:auto;display:block;background:#000;border-radius:2px}
+figcaption{margin-top:12px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+figcaption strong{display:block;color:var(--ink);font-size:17px;letter-spacing:0;text-transform:none;margin-bottom:4px;font-weight:600}
+.missing{font-size:13px;color:#E8AA50;margin-top:6px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Filmes em 1080p</h1>
+  <p>Página de teste para validar a qualidade dos vídeos antes de trocar o site. Os arquivos ficam na pasta <code>filmes/</code> ao lado desta página.</p>
+</header>
+<main id="grid"></main>
+<script>
+const FILMES=[
+ {f:'alvarez-marsal',t:'Alvarez & Marsal',k:'Filme institucional'},
+ {f:'google-black-friday-2024',t:'Black Friday Connections',k:'Google'},
+ {f:'chilli-beans',t:'Chilli Beans — 30s',k:'Promo'},
+ {f:'bourbon-resort',t:'Bourbon Resort',k:'Filme 60s'},
+ {f:'accenture-telefonica',t:'Accenture — Telefônica',k:'Animação'},
+ {f:'accenture-renew',t:'Accenture — Renew Resources',k:'Animação'},
+ {f:'youtube-brandcast',t:'YouTube Brandcast',k:'Evento'},
+ {f:'wellhub',t:'Life at Wellhub',k:'Filme'}
+];
+const grid=document.getElementById('grid');
+FILMES.forEach(x=>{
+  const fig=document.createElement('figure');
+  fig.innerHTML=
+   '<video controls playsinline preload="metadata" poster="posters/'+x.f+'.jpg">'+
+   '<source src="filmes/'+x.f+'.mp4" type="video/mp4">'+
+   '</video>'+
+   '<figcaption><strong></strong><span></span><div class="missing" hidden>Arquivo filmes/'+x.f+'.mp4 ainda não enviado</div></figcaption>';
+  fig.querySelector('strong').textContent=x.t;
+  fig.querySelector('figcaption span').textContent=x.k;
+  const v=fig.querySelector('video');
+  v.addEventListener('error',()=>{fig.querySelector('.missing').hidden=false});
+  grid.appendChild(fig);
+});
+</script>
+</body>
+</html>
